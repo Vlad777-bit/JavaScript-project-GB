@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/expansions.sass"
+    ],
+    "names": [],
+    "file": "expansions.min.css"
+}
