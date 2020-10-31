@@ -1,0 +1,80 @@
+.cart
+    width: 262px
+    min-height: 440px
+    background-color: #ffffff
+    border-radius: 5px
+    padding: 20px 15px
+    position: absolute
+    top: 54px
+    left: -14px
+    display: none
+
+    &_item
+        display: flex
+        justify-content: space-around
+        align-items: center
+
+        img
+            display: block
+            width: 72px
+            height: 85px
+
+    &_descr
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+
+    &_title
+        font-size: 12px
+        line-height: normal
+        font-weight: 700
+        text-transform: uppercase
+        color: #222222
+
+    &_price
+        font-size: 12px
+        line-height: normal
+        font-weight: 400
+        text-transform: uppercase
+        color: $main_color
+
+    &_close
+        display: block
+
+        i
+            font-size: 16px
+            line-height: normal
+            text-transform: uppercase
+            color: #c0c0c0
+
+    &_total
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        p
+            font-size: 16px
+            line-height: normal
+            font-weight: 700
+            text-transform: uppercase
+            color: #222222
+
+    &_btn
+        width: 100%
+        min-height: 50px
+        background-color: #ffffff
+        border: 1px solid #eaeaea
+        // text
+        font-size: 14px
+        line-height: normal
+        font-weight: 700
+        text-transform: uppercase
+        color: #4a4a4a
+        transition: $s_transition
+
+        &:hover
+            border: 1px solid #f16d7f
+            color: #f16d7f
+
+        &:not(first-child)
+            margin-top: 11px

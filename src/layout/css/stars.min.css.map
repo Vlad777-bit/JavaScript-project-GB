@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,MADE,CACF,QAAQ,AAAC,CACL,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,MAAM,CACnB,WAAW,CAAE,GAAG,CAChB,KAAK,CAAE,OAAO,CAAG",
+    "sources": [
+        "../sass/stars.sass"
+    ],
+    "names": [],
+    "file": "stars.min.css"
+}
