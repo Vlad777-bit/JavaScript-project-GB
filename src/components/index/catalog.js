@@ -26,11 +26,11 @@ const catalog = {
             <div class="product_items img_1">
 					<div class="prewive">
 						<div class="add">
-							<img src="../src/assets/img/product/basket_white.svg" alt="basket" class="basket_white">
+							<img src="../src/assets/img/Fetured/basket_white.svg" alt="basket" class="basket_white">
 							Add to Cart
 						</div>
 					</div>
-					<img src="../src/assets/img/product/product_${1 + i}.png" alt="product">
+					<img src="../src/assets/img/Fetured/product_${1 + i}.png" alt="product">
 					<div class="items_text">
 						${item.productName}
 						<br>
