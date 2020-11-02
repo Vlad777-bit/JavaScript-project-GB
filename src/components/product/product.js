@@ -1,4 +1,4 @@
-let titles = [
+let TITLES= [
     'MANGO PEOPLE LONG JACKET',
     'MANGO PEOPLE COAT',
     'MANGO PEOPLE JACKET',
@@ -9,9 +9,9 @@ let titles = [
     'MANGO PEOPLE LIGHT COAT',
     'MANGO PEOPLE PURPLE T-SHIRT',
 ];
-let prices = [14, 130, 36, 41, 56.9, 50, 41.5, 79.2, 120.03];
+let PRICES = [14, 130, 36, 41, 56.9, 50, 41.5, 79.2, 120.03];
 
-const catalog = {
+const product = {
     items: [],
     container: null,
     init() {
@@ -27,37 +27,37 @@ const catalog = {
                 <div class="product_items items_mt">
                     <div class="prewive prewive_product">
                         <div class="add">
-                            <img src="../src/assets/img/Fetured/basket_white.svg" alt="basket" class="basket_white">
+                            <img src="../src/assets/img/fetured/basket_white.svg" alt="basket" class="basket_white">
                             Add to Cart
                         </div>
                         <div class="add_icons">
                             <div class="stir">
-                                <img src="../src/assets/img/Products/stir.svg" alt="stir">
+                                <img src="../src/assets/img/product/stir.svg" alt="stir">
                             </div>
                             <div class="stir">
-                                <img src="../src/assets/img/Products/like.svg" alt="like">
+                                <img src="../src/assets/img/product/like.svg" alt="like">
                             </div>
                         </div>
                     </div>
-                    <img src="../src/assets/img/Products/product${1 + i}.png" alt="product">
+                    <img src="../src/assets/img/product/product${1 + i}.png" alt="product">
                     <div class="items_text">
                         ${item.productName}
                         <br>
                         <span>$${item.productPrice}</span>
                     </div>
                 </div>
-            `
+            `;
         });
         this.container.innerHTML = htmlStr;
     }
 };
 
-catalog.init();
+product.init();
 
 function getItems() {
     let arr = [];
 
-    for (let i = 0; i < titles.length; i++) {
+    for (let i = 0; i < TITLES.length; i++) {
         arr.push(createItem(i));
     }
     return arr;
@@ -66,8 +66,8 @@ function getItems() {
 
 function createItem(index) {
     return {
-        productName: titles[index],
-        productPrice: prices[index],
+        productName: TITLES[index],
+        productPrice: PRICES[index],
         productId: `prod_${index + 1}`
-    }
+    };
 }
