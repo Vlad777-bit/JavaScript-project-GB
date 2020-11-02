@@ -23,7 +23,7 @@ const catalog = {
 
         this.items.forEach((item, i) => {
             htmlStr += `
-            <div class="product_items">
+                <div class="product_items">
 					<div class="prewive">
 						<div class="add">
 							<img src="../src/assets/img/fetured/basket_white.svg" alt="basket" class="basket_white">
