@@ -33,59 +33,28 @@
 						<button class="search"><i class="fas fa-search"></i></button>
 					</form>
 				</div>
-				<div class="basket_block">
-					<div href="#" class="basket_link">
-						<img src="../src/assets/img/promo/basket.png" alt="basket">
+				<div id="basket">
+					<img src="../src/assets/img/promo/basket.png" alt="basket" name="basketBtn">
 
-						<div class="cart">
-							<div class="cart_item">
-								<img src="../src/assets/img/promo/cart1.png" alt="product">
-								<div class="cart_descr">
-									<div class="cart_title">Rebox Zane</div>
-									<div class="stars">
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star-half-alt"></i>
-									</div>
-									<div class="cart_price">1 x $250</div>
-								</div>
-								<a href="#" class="cart_close"><i class="fas fa-times-circle"></i></a>
-							</div>
-					
+					<div id="basket-inner">
+						<!-- <div id="basket-close" name="close">&#10006;</div> -->
+						<div id="basket-items">
+						</div>
+						<div>
 							<hr>
-					
-							<div class="cart_item">
-								<img src="../src/assets/img/promo/cart2.png" alt="product">
-								<div class="cart_descr">
-									<div class="cart_title">Rebox Zane</div>
-									<div class="stars">
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star-half-alt"></i>
-									</div>
-									<div class="cart_price">1 x $250</div>
-								</div>
-								<a href="#" class="cart_close"><i class="fas fa-times-circle"></i></a>
-							</div>
-					
-							<hr>
-					
 							<div class="cart_total">
 								<p>TOTAL</p>
-								<p>$500.00</p>
+								<p >$<span id="basket-sum"></span></p>
 							</div>
 							<button class="cart_btn">Checkout</button>
 							<button class="cart_btn">Go to cart</button>
 						</div>
 					</div>
-					<button class="account">My Account
-						<i class="fas fa-caret-down"></i>
-					</button>
+					
 				</div>
+				<button class="account">My Account
+					<i class="fas fa-caret-down"></i>
+				</button>
 			</div>
 		</div>
 	</header>
@@ -201,94 +170,94 @@
 	</section>
 
 	<section class="beach">
-        <div class="container">
-            <div class="beach_content">
-                <div class="feedback">
-                    <div class="feedback_face"></div>
-                    <div class="feedback_column">
-                        <div class="feedback_text">
-                            “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
-                            a pulvinar purus condimentum a. Aliquam condimentum
-                            mattis neque sed pretium”
-                        </div>
-                        <div class="feedback_name">
-                            <span>Bin Burhan</span>
-                            <br>
-                            Dhaka, Bd
-                        </div>
-                        <div class="slider">
-                            <a href="#" class="feedback_slide"></a>
-                            <a href="#" class="feedback_slide"></a>
-                            <a href="#" class="feedback_slide"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="line"></div>
-                <div class="subscribe">
-                    <div class="subscribe_title">
-                        Subscribe
-                        <br>
-                        <span>FOR OUR NEWLETTER AND PROMOTION</span>
-                    </div>
-                    <form action="#">
-                        <input type="email" placeholder="Enter Your Email" class="subscribe_input">
-                        <button class="subscribe_btn">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+		<div class="container">
+			<div class="beach_content">
+				<div class="feedback">
+					<div class="feedback_face"></div>
+					<div class="feedback_column">
+						<div class="feedback_text">
+							“Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+							a pulvinar purus condimentum a. Aliquam condimentum
+							mattis neque sed pretium”
+						</div>
+						<div class="feedback_name">
+							<span>Bin Burhan</span>
+							<br>
+							Dhaka, Bd
+						</div>
+						<div class="slider">
+							<a href="#" class="feedback_slide"></a>
+							<a href="#" class="feedback_slide"></a>
+							<a href="#" class="feedback_slide"></a>
+						</div>
+					</div>
+				</div>
+				<div class="line"></div>
+				<div class="subscribe">
+					<div class="subscribe_title">
+						Subscribe
+						<br>
+						<span>FOR OUR NEWLETTER AND PROMOTION</span>
+					</div>
+					<form action="#">
+						<input type="email" placeholder="Enter Your Email" class="subscribe_input">
+						<button class="subscribe_btn">Subscribe</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<section class="footer">
-        <div class="container">
-            <div class="footer_blocks">
-                <div class="footer_column footer_column_block">
-                    <div class="footer_logo">
-                        <a href="#"><img src="../src/assets/img/promo/logo.png" alt="logo"></a>
-                        <div class="logo_text">
-                            <a href="#">BRAN<span>D</span></a>
-                        </div>
-                    </div>
-                    <div class="footer_text">
-                        Objectively transition extensive data rather than cross functional solutions. Monotonectally
-                        syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an
-                        expanded array of processes and cross-unit partnerships.
-                        <br>
-                        <br>
-                        <br>
-                        Efficiently plagiarize 24/365 action items and focused infomediaries.
-                        Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
-                    </div>
-                </div>
-                <div class="footer_columns_group">
-                    <div class="footer_column">
-                        <div class="footer_title">COMPANY</div>
-                        <a href="#" class="footer_link">Home</a>
-                        <a href="#" class="footer_link">Shop</a>
-                        <a href="#" class="footer_link">About</a>
-                        <a href="#" class="footer_link">How It Works</a>
-                        <a href="#" class="footer_link">Contact</a>
-                    </div>
-                    <div class="footer_column">
-                        <div class="footer_title">INFORMATION</div>
-                        <a href="#" class="footer_link">Tearms & Condition</a>
-                        <a href="#" class="footer_link">Privacy Policy</a>
-                        <a href="#" class="footer_link">How to Buy</a>
-                        <a href="#" class="footer_link">How to Sell</a>
-                        <a href="#" class="footer_link">Promotion</a>
-                    </div>
-                    <div class="footer_column">
-                        <div class="footer_title">SHOP CATEGORY</div>
-                        <a href="#" class="footer_link">Men</a>
-                        <a href="#" class="footer_link">Women</a>
-                        <a href="#" class="footer_link">Child</a>
-                        <a href="#" class="footer_link">Apparel</a>
-                        <a href="#" class="footer_link">Brows All</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<div class="container">
+			<div class="footer_blocks">
+				<div class="footer_column footer_column_block">
+					<div class="footer_logo">
+						<a href="#"><img src="../src/assets/img/promo/logo.png" alt="logo"></a>
+						<div class="logo_text">
+							<a href="#">BRAN<span>D</span></a>
+						</div>
+					</div>
+					<div class="footer_text">
+						Objectively transition extensive data rather than cross functional solutions. Monotonectally
+						syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an
+						expanded array of processes and cross-unit partnerships.
+						<br>
+						<br>
+						<br>
+						Efficiently plagiarize 24/365 action items and focused infomediaries.
+						Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
+					</div>
+				</div>
+				<div class="footer_columns_group">
+					<div class="footer_column">
+						<div class="footer_title">COMPANY</div>
+						<a href="#" class="footer_link">Home</a>
+						<a href="#" class="footer_link">Shop</a>
+						<a href="#" class="footer_link">About</a>
+						<a href="#" class="footer_link">How It Works</a>
+						<a href="#" class="footer_link">Contact</a>
+					</div>
+					<div class="footer_column">
+						<div class="footer_title">INFORMATION</div>
+						<a href="#" class="footer_link">Tearms & Condition</a>
+						<a href="#" class="footer_link">Privacy Policy</a>
+						<a href="#" class="footer_link">How to Buy</a>
+						<a href="#" class="footer_link">How to Sell</a>
+						<a href="#" class="footer_link">Promotion</a>
+					</div>
+					<div class="footer_column">
+						<div class="footer_title">SHOP CATEGORY</div>
+						<a href="#" class="footer_link">Men</a>
+						<a href="#" class="footer_link">Women</a>
+						<a href="#" class="footer_link">Child</a>
+						<a href="#" class="footer_link">Apparel</a>
+						<a href="#" class="footer_link">Brows All</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<footer class="copyright">
 		<div class="container footer_container">
@@ -311,8 +280,19 @@
 		</div>
 	</footer>
 
+		
 
+	<script src="../src/components/index/basket.js"></script>
 	<script src="../src/components/index/catalog.js"></script>
+
+	<script>
+		var basket = initBasket();
+		basket.init();
+
+		var catalog = initCatalog();
+		catalog.init(basket);
+	</script>
+	
 </body>
 
 </html>

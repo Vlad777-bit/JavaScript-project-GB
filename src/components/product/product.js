@@ -23,30 +23,7 @@ const product = {
         let htmlStr = '';
 
         this.items.forEach((item, i) => {
-            htmlStr += `
-                <div class="product_items items_mt">
-                    <div class="prewive prewive_product">
-                        <div class="add">
-                            <img src="../src/assets/img/fetured/basket_white.svg" alt="basket" class="basket_white">
-                            Add to Cart
-                        </div>
-                        <div class="add_icons">
-                            <div class="stir">
-                                <img src="../src/assets/img/product/stir.svg" alt="stir">
-                            </div>
-                            <div class="stir">
-                                <img src="../src/assets/img/product/like.svg" alt="like">
-                            </div>
-                        </div>
-                    </div>
-                    <img src="../src/assets/img/product/product${1 + i}.png" alt="product">
-                    <div class="items_text">
-                        ${item.productName}
-                        <br>
-                        <span>$${item.productPrice}</span>
-                    </div>
-                </div>
-            `;
+            htmlStr += renderTemplate(item, i);
         });
         this.container.innerHTML = htmlStr;
     }
@@ -70,4 +47,31 @@ function createItem(index) {
         productPrice: PRICES[index],
         productId: `prod_${index + 1}`
     };
+}
+
+function renderTemplate(item, i) {
+    return `
+    <div class="product_items items_mt">
+        <div class="prewive prewive_product">
+            <div class="add">
+                <img src="../src/assets/img/fetured/basket_white.svg" alt="basket" class="basket_white">
+                Add to Cart
+            </div>
+            <div class="add_icons">
+                <div class="stir">
+                    <img src="../src/assets/img/product/stir.svg" alt="stir">
+                </div>
+                <div class="stir">
+                    <img src="../src/assets/img/product/like.svg" alt="like">
+                </div>
+            </div>
+        </div>
+        <img src="../src/assets/img/product/product${1 + i}.png" alt="product">
+        <div class="items_text">
+            ${item.productName}
+            <br>
+            <span>$${item.productPrice}</span>
+        </div>
+    </div>
+`;
 }

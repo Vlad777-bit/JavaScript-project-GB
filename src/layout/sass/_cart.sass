@@ -1,86 +1,98 @@
-.cart
+#basket
+    display: flex
+    position: relative
+    cursor: pointer
+    margin-left: auto
+
+    img
+        margin-right: 20px
+
+#basket-inner
     width: 262px
-    min-height: 440px
+    // min-height: 440px
     background-color: #ffffff
     border-radius: 5px
     padding: 20px 15px
     position: absolute
-    top: 54px
+    top: 37px
     left: -14px
     display: none
 
-    &_item
-        display: flex
-        justify-content: space-around
-        align-items: center
+.basket_info
+    display: flex
+    justify-content: space-around
+    align-items: center
 
-        img
-            display: block
-            width: 72px
-            height: 85px
+    img
+        display: block
+        width: 72px
+        height: 85px
 
-    &_descr
-        display: flex
-        flex-direction: column
-        align-items: flex-start
+.cart_descr
+    display: flex
+    flex-direction: column
+    align-items: flex-start
 
-    &_title
-        font-size: 12px
+.cart_title
+    font-size: 12px
+    line-height: normal
+    font-weight: 700
+    text-transform: uppercase
+    color: #222222
+
+.cart_price
+    font-size: 12px
+    line-height: normal
+    font-weight: 400
+    text-transform: uppercase
+    color: $main_color
+
+.cart_close
+    display: block
+
+    i
+        font-size: 16px
+        line-height: normal
+        text-transform: uppercase
+        color: #c0c0c0
+
+.cart_total
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    #basket-sum, p
+        font-size: 16px
         line-height: normal
         font-weight: 700
         text-transform: uppercase
         color: #222222
 
-    &_price
-        font-size: 12px
-        line-height: normal
-        font-weight: 400
-        text-transform: uppercase
-        color: $main_color
+.cart_btn
+    width: 100%
+    min-height: 50px
+    background-color: #ffffff
+    border: 1px solid #eaeaea
+    // text
+    font-size: 14px
+    line-height: normal
+    font-weight: 700
+    text-transform: uppercase
+    color: #4a4a4a
+    transition: $s_transition
 
-    &_close
-        display: block
+    &:hover
+        border: 1px solid #f16d7f
+        color: #f16d7f
 
-        i
-            font-size: 16px
-            line-height: normal
-            text-transform: uppercase
-            color: #c0c0c0
+    &:not(first-child)
+        margin-top: 11px
 
-    &_total
-        display: flex
-        justify-content: space-between
-        align-items: center
+.cart_close
+    text-decoration: none
+    font-size: 16px
+    color: #000
+    margin-left: 15px
 
-        p
-            font-size: 16px
-            line-height: normal
-            font-weight: 700
-            text-transform: uppercase
-            color: #222222
-
-    &_btn
-        width: 100%
-        min-height: 50px
-        background-color: #ffffff
-        border: 1px solid #eaeaea
-        // text
-        font-size: 14px
-        line-height: normal
-        font-weight: 700
-        text-transform: uppercase
-        color: #4a4a4a
-        transition: $s_transition
-
-        &:hover
-            border: 1px solid #f16d7f
-            color: #f16d7f
-
-        &:not(first-child)
-            margin-top: 11px
-
-.basket_link
-    position: relative
-    cursor: pointer
-    &:hover .cart
-        display: block
+    &:hover
+        text-decoration: none

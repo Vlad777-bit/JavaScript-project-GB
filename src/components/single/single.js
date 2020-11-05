@@ -19,22 +19,7 @@ const single = {
         let htmlStr = '';
 
         this.items.forEach((item, i) => {
-            htmlStr += `
-            <div class="product_items">
-                <div class="prewive">
-                    <div class="add">
-                        <img src="../src/assets/img/Fetured/basket_white.svg" alt="basket" class="basket_white">
-                        Add to Cart
-                    </div>
-                </div>
-                <img src="../src/assets/img/single/woman${1 + i}.png" alt="product">
-                <div class="items_text single_text">
-                    ${item.productName}
-                    <br>
-                    <span>$${item.productPrice}</span>
-                </div>
-            </div>
-            `;
+            htmlStr += 
         });
         this.container.innerHTML = htmlStr;
     }
@@ -58,4 +43,23 @@ function createItem(index) {
         productPrice: PRICES[index],
         productId: `prod_${index + 1}`
     };
+}
+
+function renderTemplate(item, i) {
+    return `
+    <div class="product_items">
+        <div class="prewive">
+            <div class="add">
+                <img src="../src/assets/img/Fetured/basket_white.svg" alt="basket" class="basket_white">
+                Add to Cart
+            </div>
+        </div>
+        <img src="../src/assets/img/single/woman${1 + i}.png" alt="product">
+        <div class="items_text single_text">
+            ${item.productName}
+            <br>
+            <span>$${item.productPrice}</span>
+        </div>
+    </div>
+`;
 }
