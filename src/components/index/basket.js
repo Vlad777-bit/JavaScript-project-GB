@@ -1,11 +1,7 @@
 function initBasket() {
-    let TITLES = [
-    'MANGO PEOPLE T-SHIRT',
-    'MANGO PEOPLE RED DRESS',
-    ];
-    let PRICES = [52, 68];
-
-    let AMOUNTS = [4, 2]
+    let TITLES = [];
+    let PRICES = [];
+    let AMOUNTS = [];
 
     const basket = {
         items: [],
@@ -16,8 +12,7 @@ function initBasket() {
         totalContainer: null,
         cart: null,
         init() {
-            basketClick = document.querySelector('#basket');
-            close = document.querySelector('#basket-close');
+            basketRemove = document.querySelector('#basket');
             this.container = document.querySelector('#basket-items');
             this.wrapper = document.querySelector('#basket-inner');
             this.totalContainer = document.querySelector('#basket-sum');
@@ -57,22 +52,16 @@ function initBasket() {
             this._render();
         },
         _handleEvents() {
-            basketClick.addEventListener('click', event => {
-                if (event.target.name == 'basketBtn') {
-                    this.wrapper.style.display = 'block';
-                }
-                if (event.target.offsetParent.id != 'basket-inner' && event.target.name != 'basketBtn') {
-                    this.wrapper.style.display = 'none';
-                    console.log(event);
-                    console.log(event.target);
-                }    
-                if (event.target.className == 'cart_close'){
+            document.querySelector('#basket-btn').addEventListener('click', e => {
+                this.wrapper.classList.toggle('hidden');      
+            });
 
+            basketRemove.addEventListener('click', event => {
+                   
+                if (event.target.className == 'cart_close'){
                     let id = event.target.dataset.id; 
                     let item = this.items.find(el => el.productId == id);
                     this._remove(item);
-                    console.log(event);
-                    console.log(event.target);
                 }     
             });
         },
@@ -80,12 +69,6 @@ function initBasket() {
 
     return basket;
 }
-
-
-
-
-
-
 
 function getBasketItems(TITLES, PRICES, AMOUNTS) {
     let arr = [];

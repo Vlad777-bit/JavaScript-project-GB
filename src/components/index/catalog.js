@@ -28,7 +28,7 @@ function initCatalog() {
             let htmlStr = '';
 
             this.items.forEach((item, i) => {
-                htmlStr += renderCatalogTemplate(item, i)
+                htmlStr += renderCatalogTemplate(item, i);
             });
             this.container.innerHTML = htmlStr;
         },

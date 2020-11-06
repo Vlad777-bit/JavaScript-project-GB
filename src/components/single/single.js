@@ -19,7 +19,7 @@ const single = {
         let htmlStr = '';
 
         this.items.forEach((item, i) => {
-            htmlStr += 
+            htmlStr += renderTemplate(item, i);
         });
         this.container.innerHTML = htmlStr;
     }
@@ -49,10 +49,10 @@ function renderTemplate(item, i) {
     return `
     <div class="product_items">
         <div class="prewive">
-            <div class="add">
-                <img src="../src/assets/img/Fetured/basket_white.svg" alt="basket" class="basket_white">
+            <button class="add">
+                <img src="../src/assets/img/fetured/basket_white.svg" alt="basket" class="basket_white">
                 Add to Cart
-            </div>
+            </button>
         </div>
         <img src="../src/assets/img/single/woman${1 + i}.png" alt="product">
         <div class="items_text single_text">
