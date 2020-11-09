@@ -1,34 +1,31 @@
 function initCatalog() {
 
-    let TITLES = [
-        'MANGO PEOPLE T-SHIRT',
-        'MANGO PEOPLE RED DRESS',
-        'MANGO PEOPLE JACKET',
-        'MANGO PEOPLE WHITE DRESS',
-        'MANGO PEOPLE STRIPED DRESS',
-        'MANGO PEOPLE TUXEDO',
-        'MANGO PEOPLE TROUSERS',
-        'MANGO PEOPLE SHORTS',
-    ];
-    let PRICES = [52, 68, 36, 700, 87, 50, 67.5, 120.03];
-
     const catalog = {
         items: [],
         container: null,
         basket: null,
+        url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/catalog.json',
         init(basket) {
             this.container = document.querySelector('#catalog');
-            this.items = getCatalogItems(TITLES, PRICES);
             this.basket = basket;
-            this._render();
-            this._handleEvents();
+
+            //async
+            this._get(this.url)
+                .then(catalog => {
+                    this.items = catalog;
+                    this._render();
+                    this._handleEvents();
+                });
         },
 
+        _get(url) {
+            return fetch(url).then(d => d.json()); //сделает запрос за джейсоном, дождется ответа и преобразует джейсон в объект, который вернется из данного метода
+        },
         _render() {
             let htmlStr = '';
 
             this.items.forEach((item, i) => {
-                htmlStr += renderCatalogTemplate(item, i)
+                htmlStr += renderCatalogTemplate(item, i);
             });
             this.container.innerHTML = htmlStr;
         },
@@ -36,10 +33,9 @@ function initCatalog() {
         _handleEvents() {
             this.container.addEventListener('click', event => {
                 if (event.target.name == 'add') {
-                    let id = event.target.dataset.id;
+                    // console.log('КУПЛЕНО!')
+                    let id = event.target.dataset.id; //from data-id
                     let item = this.items.find(el => el.productId == id);
-
-                    item = Object.assign({}, item, { productAmount: 1 });
                     this.basket.add(item);
                 }
             });
@@ -47,24 +43,6 @@ function initCatalog() {
     };
 
     return catalog;
-}
-
-function getCatalogItems(TITLES, PRICES) {
-    let arr = [];
-
-    for (let i = 0; i < TITLES.length; i++) {
-        arr.push(createCatalogItem(i, TITLES, PRICES));
-    }
-    return arr;
-}
-
-
-function createCatalogItem(index, TITLES, PRICES) {
-    return {
-        productName: TITLES[index],
-        productPrice: PRICES[index],
-        productId: `prod_${index + 1}`
-    };
 }
 
 function renderCatalogTemplate(item, i) {
@@ -79,7 +57,7 @@ function renderCatalogTemplate(item, i) {
                 Add to Cart
             </button>
         </div>
-        <img src="../src/assets/img/fetured/product_${1 + i}.png" alt="product">
+        <img src="${item.productImg}" alt="product">
         <div class="items_text">
             ${item.productName}
             <br>

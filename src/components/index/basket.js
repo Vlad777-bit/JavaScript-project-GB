@@ -1,15 +1,10 @@
 function initBasket() {
-    let TITLES = [
-    'MANGO PEOPLE T-SHIRT',
-    'MANGO PEOPLE RED DRESS',
-    ];
-    let PRICES = [52, 68];
-
-    let AMOUNTS = [4, 2]
+   
 
     const basket = {
         items: [],
         total: null,
+        url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/basket.json',
         container: null,
         wrapper: null,
         sum: 0,
@@ -21,9 +16,19 @@ function initBasket() {
             this.container = document.querySelector('#basket-items');
             this.wrapper = document.querySelector('#basket-inner');
             this.totalContainer = document.querySelector('#basket-sum');
-            this.items = getBasketItems(TITLES, PRICES, AMOUNTS);
+
+             //async
+             this._get(this.url)
+             .then(basket => {
+                 this.items = basket.content;
+                 this._render();
+                 this._handleEvents();
+             });
             this._render();
             this._handleEvents();
+        },
+        _get(url) {
+            return fetch(url).then(d => d.json()); //сделает запрос за джейсоном, дождется ответа и преобразует джейсон в объект, который вернется из данного метода
         },
         _render() {
             let htmlStr = '';
@@ -37,23 +42,31 @@ function initBasket() {
         _calcSum() {
             this.sum = 0;
             this.items.forEach(item => {
-                this.sum += item.productAmount * item.productPrice;
+                this.sum += item.amount * item.productPrice;
             });
 
             this.totalContainer.innerText = this.sum;
         },
         add(item) {
-            let basketItem = this.items.find(el => el.productName == item.productName);
-            if (basketItem) {
-                basketItem.productAmount++;
-            } else {
-                this.items.push(item);
-            }
-            this._render();
+            let find = this.items.find(el => item.productId == el.productId);
 
+           if(find) {
+               find.amount++;
+           } else {
+               this.items.push(Object.assign({}, item, { amount: 1 }));
+           }
+
+           this._render();
         },
-        _remove(item) {
-            this.items.splice(this.items.indexOf(item), 1);
+        _remove(id) {
+            let find = this.items.find(el => el.productId == id);
+
+            if(find.amount > 1) {
+                find.amount--;
+            } else {
+                this.items.splice(this.items.indexOf(find), 1);
+            }
+
             this._render();
         },
         _handleEvents() {
@@ -66,14 +79,11 @@ function initBasket() {
                     console.log(event);
                     console.log(event.target);
                 }    
-                if (event.target.className == 'cart_close'){
-
-                    let id = event.target.dataset.id; 
-                    let item = this.items.find(el => el.productId == id);
-                    this._remove(item);
-                    console.log(event);
-                    console.log(event.target);
-                }     
+                this.container.addEventListener('click', event => {
+                    if(event.target.name == 'remove') {
+                        this._remove(event.target.dataset.id);
+                    }
+                });   
             });
         },
     };
@@ -87,31 +97,14 @@ function initBasket() {
 
 
 
-function getBasketItems(TITLES, PRICES, AMOUNTS) {
-    let arr = [];
 
-    for (let i = 0; i < TITLES.length; i++) {
-        arr.push(createBasketItem(i, TITLES, PRICES, AMOUNTS));
-    }
-    return arr;
-}
-
-
-function createBasketItem(index, TITLES, PRICES, AMOUNTS) {
-    return {
-        productName: TITLES[index],
-        productPrice: PRICES[index],
-        productAmount: AMOUNTS[index],
-        productId: `prod_${index + 1}`,
-    };
-}
 
 function renderBasketTemplate(item, i) {
     return `   
     <div class="basket_info">
-        <img src="../src/assets/img/promo/cart${i + 1}.png" alt="product">
+        <img src="${item.productImg}" alt="product">
         <div class="cart_descr">
-            <div class="cart_title">Rebox Zane</div>
+            <div class="cart_title">${item.productName}</div>
             <div class="stars">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
@@ -119,9 +112,9 @@ function renderBasketTemplate(item, i) {
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
             </div>
-            <div class="cart_price">${item.productAmount} x $${item.productPrice}</div>
+            <div class="cart_price">${item.amount} x $${item.productPrice}</div>
         </div>
-        <a href="#" data-id="${item.productId}" class="cart_close">&#10006;</a>
+        <a href="#" name="remove" data-id="${item.productId}" class="cart_close fas fa-times-circle"></a>
         <hr>
     </div>
 `;
