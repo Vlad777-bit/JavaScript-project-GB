@@ -11,11 +11,11 @@ function initCatalog() {
 
             //async
             this._get(this.url)
-                .then(catalog => {
-                    this.items = catalog;
-                    this._render();
-                    this._handleEvents();
-                });
+            .then(catalog => {
+                this.items = catalog;
+                this._render();
+                this._handleEvents();
+            });
         },
 
         _get(url) {
@@ -32,7 +32,7 @@ function initCatalog() {
 
         _handleEvents() {
             this.container.addEventListener('click', event => {
-                if (event.target.name == 'add') {
+                if(event.target.name == 'add') {
                     // console.log('КУПЛЕНО!')
                     let id = event.target.dataset.id; //from data-id
                     let item = this.items.find(el => el.productId == id);

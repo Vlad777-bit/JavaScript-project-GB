@@ -1,62 +1,61 @@
-let TITLES= [
-    'MANGO PEOPLE LONG JACKET',
-    'MANGO PEOPLE COAT',
-    'MANGO PEOPLE JACKET',
-    'MANGO PEOPLE GREY T-SHIRT',
-    'MANGO PEOPLE SHORTS',
-    'MANGO PEOPLE BOMBER JACKET',
-    'MANGO PEOPLE TUXEDO',
-    'MANGO PEOPLE LIGHT COAT',
-    'MANGO PEOPLE PURPLE T-SHIRT',
-];
-let PRICES = [14, 130, 36, 41, 56.9, 50, 41.5, 79.2, 120.03];
+function initProduct() {
 
-const product = {
-    items: [],
-    container: null,
-    init() {
-        this.container = document.querySelector('#catalog');
-        this.items = getItems();
-        this._render();
-    },
-    _render() {
-        let htmlStr = '';
+    const product = {
+        items: [],
+        container: null,
+        basket: null,
+        url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/product.json',
+        init(basket) {
+            this.container = document.querySelector('#product');
+            this.basket = basket;
 
-        this.items.forEach((item, i) => {
-            htmlStr += renderTemplate(item, i);
-        });
-        this.container.innerHTML = htmlStr;
-    }
-};
+            //async
+            this._get(this.url)
+            .then(product => {
+                this.items = product;
+                this._render();
+                this._handleEvents();
+            });
+        },
 
-product.init();
+        _get(url) {
+            return fetch(url).then(d => d.json()); //сделает запрос за джейсоном, дождется ответа и преобразует джейсон в объект, который вернется из данного метода
+        },
+        _render() {
+            let htmlStr = '';
 
-function getItems() {
-    let arr = [];
+            this.items.forEach((item, i) => {
+                htmlStr += renderProductTemplate(item, i);
+            });
+            this.container.innerHTML = htmlStr;
+        },
 
-    for (let i = 0; i < TITLES.length; i++) {
-        arr.push(createItem(i));
-    }
-    return arr;
-}
-
-
-function createItem(index) {
-    return {
-        productName: TITLES[index],
-        productPrice: PRICES[index],
-        productId: `prod_${index + 1}`
+        _handleEvents() {
+            this.container.addEventListener('click', event => {
+                if(event.target.name == 'add') {
+                    // console.log('КУПЛЕНО!')
+                    let id = event.target.dataset.id; //from data-id
+                    let item = this.items.find(el => el.productId == id);
+                    this.basket.add(item);
+                }
+            });
+        }
     };
+
+    return product;
 }
 
-function renderTemplate(item, i) {
+function renderProductTemplate(item, i) {
     return `
     <div class="product_items items_mt">
         <div class="prewive prewive_product">
-            <div class="add">
+            <button class="add"
+                name="add"
+                data-id="${item.productId}"
+            >
                 <img src="../src/assets/img/fetured/basket_white.svg" alt="basket" class="basket_white">
                 Add to Cart
-            </div>
+            </button>
             <div class="add_icons">
                 <div class="stir">
                     <img src="../src/assets/img/product/stir.svg" alt="stir">
@@ -66,7 +65,7 @@ function renderTemplate(item, i) {
                 </div>
             </div>
         </div>
-        <img src="../src/assets/img/product/product${1 + i}.png" alt="product">
+        <img src="${item.productImg}" alt="product">
         <div class="items_text">
             ${item.productName}
             <br>

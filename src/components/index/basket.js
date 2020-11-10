@@ -1,31 +1,24 @@
 function initBasket() {
-   
-
     const basket = {
         items: [],
         total: null,
         url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/basket.json',
-        container: null,
-        wrapper: null,
+        container: null, // basket-items
+        wrapper: null, //basket all
         sum: 0,
         totalContainer: null,
-        cart: null,
         init() {
-            basketClick = document.querySelector('#basket');
-            close = document.querySelector('#basket-close');
             this.container = document.querySelector('#basket-items');
             this.wrapper = document.querySelector('#basket-inner');
             this.totalContainer = document.querySelector('#basket-sum');
-
-             //async
-             this._get(this.url)
-             .then(basket => {
-                 this.items = basket.content;
-                 this._render();
-                 this._handleEvents();
-             });
-            this._render();
-            this._handleEvents();
+            
+            //async
+            this._get(this.url)
+            .then(basket => {
+                this.items = basket.content;
+                this._render();
+                this._handleEvents();
+            });
         },
         _get(url) {
             return fetch(url).then(d => d.json()); //сделает запрос за джейсоном, дождется ответа и преобразует джейсон в объект, который вернется из данного метода
@@ -48,7 +41,7 @@ function initBasket() {
             this.totalContainer.innerText = this.sum;
         },
         add(item) {
-            let find = this.items.find(el => item.productId == el.productId);
+           let find = this.items.find(el => item.productId == el.productId);
 
            if(find) {
                find.amount++;
@@ -70,34 +63,22 @@ function initBasket() {
             this._render();
         },
         _handleEvents() {
-            basketClick.addEventListener('click', event => {
-                if (event.target.name == 'basketBtn') {
-                    this.wrapper.style.display = 'block';
-                }
-                if (event.target.offsetParent.id != 'basket-inner' && event.target.name != 'basketBtn') {
-                    this.wrapper.style.display = 'none';
-                    console.log(event);
-                    console.log(event.target);
-                }    
-                this.container.addEventListener('click', event => {
-                    if(event.target.name == 'remove') {
-                        this._remove(event.target.dataset.id);
-                    }
-                });   
+            // +++ организовать скрытие/показ корзины по клику а не по ховеру
+            document.querySelector('#basket-btn').addEventListener('click', e => {
+                this.wrapper.classList.toggle('hidden');
             });
-        },
-    };
+
+            this.container.addEventListener('click', event => {
+                if(event.target.name == 'remove') {
+                    this._remove(event.target.dataset.id);
+                }
+            });
+        }
+    }
 
     return basket;
+    // basket.init();
 }
-
-
-
-
-
-
-
-
 
 function renderBasketTemplate(item, i) {
     return `   
@@ -114,7 +95,7 @@ function renderBasketTemplate(item, i) {
             </div>
             <div class="cart_price">${item.amount} x $${item.productPrice}</div>
         </div>
-        <a href="#" name="remove" data-id="${item.productId}" class="cart_close fas fa-times-circle"></a>
+        <a href="#" data-id="${item.productId}" class="cart_close fas fa-times-circle" name="remove"></a>
         <hr>
     </div>
 `;

@@ -4,9 +4,6 @@
     cursor: pointer
     margin-left: auto
 
-    img
-        margin-right: 20px
-
 #basket-inner
     width: 262px
     // min-height: 440px
@@ -14,9 +11,12 @@
     border-radius: 5px
     padding: 20px 15px
     position: absolute
-    top: 37px
+    top: 57px
     left: -14px
-    display: none
+    display: block
+
+.hidden
+    display: none !important
 
 .basket_info
     display: flex
@@ -27,6 +27,11 @@
         display: block
         width: 72px
         height: 85px
+
+.basket_button
+    border: none
+    background: rgba(0, 0, 0, 0)
+    margin-right: 15px
 
 .cart_descr
     display: flex
@@ -49,15 +54,6 @@
 
 .cart_close
     display: block
-    font-size: 16px
-    line-height: normal
-    text-transform: uppercase
-    color: #c0c0c0
-    transition: $s_transition
-
-    &:hover
-        text-decoration: none
-        color: #000
 
 .cart_total
     display: flex
@@ -84,15 +80,18 @@
     color: #4a4a4a
     transition: $s_transition
 
+    &:not(:first-child)
+        margin-top: 11px
+
     &:hover
         border: 1px solid #f16d7f
         color: #f16d7f
 
-    &:not(first-child)
-        margin-top: 11px
+.cart_close
+    text-decoration: none
+    font-size: 16px
+    color: #000
+    margin-left: 15px
 
-// .cart_close
-//     text-decoration: none
-//     font-size: 16px
-//     color: #000
-//     margin-left: 15px
+    &:hover
+        text-decoration: none
