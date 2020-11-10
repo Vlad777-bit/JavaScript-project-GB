@@ -8,7 +8,7 @@ function initProduct() {
         init(basket) {
             this.container = document.querySelector('#product');
             this.basket = basket;
-
+ 
             //async
             this._get(this.url)
             .then(product => {

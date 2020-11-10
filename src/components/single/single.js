@@ -1,60 +1,63 @@
-let TITLES = [
-    'BLAZE LEGGINGS',
-    'ALEXA SWEATER',
-    'AGNES TOP',
-    'SYLVA SWEATER'
-];
+function initSingle() {
 
-let PRICES = [710.9, 609.99, 580.5, 199.9];
+    const single = {
+        items: [],
+        container: null,
+        basket: null,
+        url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/single.json',
+        init(basket) {
+            this.container = document.querySelector('#single');
+            this.basket = basket;
+ 
+            //async
+            this._get(this.url)
+            .then(single => {
+                this.items = single;
+                this._render();
+                this._handleEvents();
+            });
+        },
 
-const single = {
-    items: [],
-    container: null,
-    init() {
-        this.container = document.querySelector('#catalog');
-        this.items = getItems();
-        this._render();
-    },
-    _render() {
-        let htmlStr = '';
+        _get(url) {
+            return fetch(url).then(d => d.json()); //сделает запрос за джейсоном, дождется ответа и преобразует джейсон в объект, который вернется из данного метода
+        },
+        _render() {
+            let htmlStr = '';
 
-        this.items.forEach((item, i) => {
-            htmlStr += renderTemplate(item, i);
-        });
-        this.container.innerHTML = htmlStr;
-    }
-};
+            this.items.forEach((item, i) => {
+                htmlStr += renderSingleTemplate(item, i);
+            });
+            this.container.innerHTML = htmlStr;
+        },
 
-single.init();
-
-function getItems() {
-    let arr = [];
-
-    for (let i = 0; i < TITLES.length; i++) {
-        arr.push(createItem(i));
-    }
-    return arr;
-}
-
-
-function createItem(index) {
-    return {
-        productName: TITLES[index],
-        productPrice: PRICES[index],
-        productId: `prod_${index + 1}`
+        _handleEvents() {
+            this.container.addEventListener('click', event => {
+                if(event.target.name == 'add') {
+                    // console.log('КУПЛЕНО!')
+                    let id = event.target.dataset.id; //from data-id
+                    let item = this.items.find(el => el.productId == id);
+                    this.basket.add(item);
+                }
+            });
+        }
     };
+
+    return single;
 }
 
-function renderTemplate(item, i) {
+function renderSingleTemplate(item, i) {
     return `
     <div class="product_items">
         <div class="prewive">
-            <button class="add">
+            <button class="add"
+                name="add"
+                data-id="${item.productId}"
+            >
                 <img src="../src/assets/img/fetured/basket_white.svg" alt="basket" class="basket_white">
                 Add to Cart
             </button>
         </div>
-        <img src="../src/assets/img/single/woman${1 + i}.png" alt="product">
+        <img src="${item.productImg}" alt="product">
         <div class="items_text single_text">
             ${item.productName}
             <br>
