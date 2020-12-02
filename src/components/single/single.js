@@ -23,21 +23,11 @@ function initSingle() {
         },
         _render() {
             let htmlStr = '';
-
-<<<<<<< HEAD
-        this.items.forEach((item, i) => {
-            htmlStr += renderTemplate(item, i);
-        });
-        this.container.innerHTML = htmlStr;
-    }
-};
-=======
             this.items.forEach((item, i) => {
                 htmlStr += renderSingleTemplate(item, i);
             });
             this.container.innerHTML = htmlStr;
         },
->>>>>>> master
 
         _handleEvents() {
             this.container.addEventListener('click', event => {
@@ -58,14 +48,10 @@ function renderSingleTemplate(item, i) {
     return `
     <div class="product_items">
         <div class="prewive">
-<<<<<<< HEAD
-            <button class="add">
-=======
-            <button class="add"
+    <button class="add"
                 name="add"
                 data-id="${item.productId}"
             >
->>>>>>> master
                 <img src="../src/assets/img/fetured/basket_white.svg" alt="basket" class="basket_white">
                 Add to Cart
             </button>

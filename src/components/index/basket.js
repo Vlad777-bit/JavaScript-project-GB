@@ -1,11 +1,4 @@
 function initBasket() {
-<<<<<<< HEAD
-    let TITLES = [];
-    let PRICES = [];
-    let AMOUNTS = [];
-
-=======
->>>>>>> master
     const basket = {
         items: [],
         total: null,
@@ -15,10 +8,6 @@ function initBasket() {
         sum: 0,
         totalContainer: null,
         init() {
-<<<<<<< HEAD
-            basketRemove = document.querySelector('#basket');
-=======
->>>>>>> master
             this.container = document.querySelector('#basket-items');
             this.wrapper = document.querySelector('#basket-inner');
             this.totalContainer = document.querySelector('#basket-sum');
@@ -73,44 +62,18 @@ function initBasket() {
 
             this._render();
         },
-        _handleEvents() {
-<<<<<<< HEAD
-            document.querySelector('#basket-btn').addEventListener('click', e => {
-                this.wrapper.classList.toggle('hidden');      
-            });
-
-            basketRemove.addEventListener('click', event => {
-                   
-                if (event.target.className == 'cart_close'){
-                    let id = event.target.dataset.id; 
-                    let item = this.items.find(el => el.productId == id);
-                    this._remove(item);
-                }     
-=======
-            // +++ организовать скрытие/показ корзины по клику а не по ховеру
+        _handleEvents() {     
             document.querySelector('#basket-btn').addEventListener('click', e => {
                 this.wrapper.classList.toggle('hidden');
->>>>>>> master
             });
 
-<<<<<<< HEAD
-    return basket;
-}
-
-function getBasketItems(TITLES, PRICES, AMOUNTS) {
-    let arr = [];
-
-    for (let i = 0; i < TITLES.length; i++) {
-        arr.push(createBasketItem(i, TITLES, PRICES, AMOUNTS));
-=======
             this.container.addEventListener('click', event => {
                 if(event.target.name == 'remove') {
                     this._remove(event.target.dataset.id);
                 }
             });
         }
->>>>>>> master
-    }
+    };
 
     return basket;
     // basket.init();
