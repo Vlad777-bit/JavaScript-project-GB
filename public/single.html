@@ -33,12 +33,32 @@
                         <button class="search"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
-                <div class="basket_block">
-                    <img src="../src/assets/img/promo/basket.svg" alt="basket">
-                    <button class="account">My Account
-                        <i class="fas fa-caret-down"></i>
-                    </button>
-                </div>
+                <div id="basket">
+					<button 
+						class="basket_button" 
+						name="basketBtn"
+						id="basket-btn">
+						<img src="../src/assets/img/promo/basket.svg" alt="basket" name="basketBtn">
+					</button>
+
+					<div id="basket-inner" class="hidden">
+						<div id="basket-items">
+						</div>
+						<div>
+							<hr>
+							<div class="cart_total">
+								<p>TOTAL</p>
+								<p >$<span id="basket-sum"></span></p>
+							</div>
+							<button class="cart_btn">Checkout</button>
+							<button class="cart_btn">Go to cart</button>
+						</div>
+					</div>
+					 
+				</div>
+				<button class="account">My Account
+					<i class="fas fa-caret-down"></i>
+				</button>
             </div>
         </div>
     </header>
@@ -121,7 +141,7 @@
     <section class="like_also">
         <div class="container">
             <div class="like_also_title">you may like also</div>
-            <div class="product_list" id="catalog">
+            <div class="product_list" id="single">
             </div>
         </div>
     </section>
@@ -237,7 +257,16 @@
         </div>
     </footer>
 
+    <script src="../src/components/index/basket.js"></script>
     <script src="../src/components/single/single.js"></script>
+
+	<script>
+		var basket = initBasket();
+		basket.init();
+
+		var single = initSingle();
+		single.init(basket);
+	</script>
 </body>
 
 </html>
