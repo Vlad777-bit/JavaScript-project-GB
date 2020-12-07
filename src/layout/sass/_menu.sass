@@ -1,0 +1,73 @@
+.menu_brand
+    width: 100%
+    min-height: 51px
+    background-color: #ffffff
+    display: flex
+    justify-content: center
+    align-items: center
+
+    .menu
+        width: 680px
+        margin: 0 auto
+        list-style-type: none
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding-left: 0
+
+        &_link
+            font-size: 14px
+            font-weight: 700
+            text-transform: uppercase
+            color: #222222
+
+            &:hover
+                color: #f16d7f
+                text-decoration: none
+                border-bottom: 3px solid #f16d7f
+                padding-bottom: 15px
+
+        .active_link
+            width: 75px
+            border-bottom: 3px solid #f16d7f
+            padding-bottom: 15px
+
+.open_menu
+    display: flex !important
+
+@media (max-width: 767px)
+
+    .menu_brand
+        width: 100%
+        .menu
+            width: 100%
+            display: flex
+            justify-content: space-between
+
+            .menu_list
+                padding: 0 9px
+
+@media (max-width: 575px)
+
+    .menu_brand
+        min-height: 0
+        .menu
+            width: 100%
+            padding: 20px 0
+            display: flex
+            flex-direction: column
+            display: none
+
+            .menu_list
+                padding: 0 9px
+                margin: 15px
+
+                .menu_link
+                    font-size: 18px
+                        // padding: 15px
+
+                    &:hover
+                        border: none
+
+                        .active_link
+                            border: none

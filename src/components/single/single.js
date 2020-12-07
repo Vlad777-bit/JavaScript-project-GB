@@ -28,7 +28,6 @@ function initSingle() {
             });
             this.container.innerHTML = htmlStr;
         },
-
         _handleEvents() {
             this.container.addEventListener('click', event => {
                 if(event.target.name == 'add') {
@@ -48,7 +47,7 @@ function renderSingleTemplate(item, i) {
     return `
     <div class="product_items">
         <div class="prewive">
-    <button class="add"
+            <button class="add"
                 name="add"
                 data-id="${item.productId}"
             >

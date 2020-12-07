@@ -33,7 +33,6 @@ function initProduct() {
         _handleEvents() {
             this.container.addEventListener('click', event => {
                 if(event.target.name == 'add') {
-                    // console.log('КУПЛЕНО!')
                     let id = event.target.dataset.id; //from data-id
                     let item = this.items.find(el => el.productId == id);
                     this.basket.add(item);

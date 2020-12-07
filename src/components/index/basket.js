@@ -66,14 +66,13 @@ function initBasket() {
             document.querySelector('#basket-btn').addEventListener('click', e => {
                 this.wrapper.classList.toggle('hidden');
             });
-
             this.container.addEventListener('click', event => {
                 if(event.target.name == 'remove') {
                     this._remove(event.target.dataset.id);
                 }
             });
         }
-    };
+    }
 
     return basket;
     // basket.init();
