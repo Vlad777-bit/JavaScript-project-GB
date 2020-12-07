@@ -94,7 +94,6 @@ function renderBasketTemplate(item, i) {
             <div class="cart_price">${item.amount} x $${item.productPrice}</div>
         </div>
         <a href="#" data-id="${item.productId}" class="cart_close fas fa-times-circle" name="remove"></a>
-        <hr>
     </div>
 `;
 }
