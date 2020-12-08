@@ -44,7 +44,6 @@
 					</button>
 
 					<div id="basket-inner" class="hidden">
-						<!-- <div id="basket-close" name="close">&#10006;</div> -->
 						<div id="basket-items">
 						</div>
 						<div>
@@ -211,12 +210,7 @@
                     <form>
                         <div class="form-group my_form">
                             <label for="formControlRange" class="my_label">Prace</label>
-                            <input type="range" class="form-control-range my_input" id="formControlRange">
-                            <!--Застелизовать input не получилось-->
-                            <div>
-                                <span>$52</span>
-                                <span>$400</span>
-                            </div>
+                            <input type="text" class="js-range-slider" id="formRange" name="my_range">
                         </div>
                     </form>
                 </div>
@@ -427,7 +421,7 @@
     
     <script src="../src/components/index/basket.js"></script>
     <script src="../src/components/product/product.js"></script>
-
+    <script src="../src/components/product/range.js"></script>
 
 	<script>
 		var basket = initBasket();
