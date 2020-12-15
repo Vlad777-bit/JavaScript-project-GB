@@ -2,19 +2,12 @@
     background-color: #f7f7f7
     min-height: 777px
 
-    .slider_container
-        padding-top: 11px
-        display: flex
-        justify-content: space-between
-        align-items: center
-        border: 1px solid #eaeaea
-
-        .slider_woman_img
-            min-height: 777px
-            // width: 100%
-            margin: 0 auto
-            object-fit: cover
-            object-position: center center
+.slider_container
+    padding-top: 11px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border: 1px solid #eaeaea
 
     .fas
         width: 47px
@@ -26,6 +19,13 @@
         font-size: 24px
         color: #ffffff
         border: none
+
+.slider_woman_img
+    min-height: 777px
+        // width: 100%
+    margin: 0 auto
+    object-fit: cover
+    object-position: center center
 
 .description
     background-color: #ffffff
@@ -109,7 +109,7 @@
 
     .description_choose
         margin-top: 63px
-        width: 537px
+        width: 100%
         display: flex
         justify-content: space-between
 
@@ -178,12 +178,16 @@
         width: 100%
         padding: 71px 50px
 
+        .description_choose
+            width: 537px
+
 @media (max-width: 767px)
     .description_container
         .description_line
             width: 100%
 
         .description_choose
+            width: 100%
             display: flex
             flex-direction: column
             align-items: center
@@ -196,14 +200,17 @@
             width: 100%
 
 @media (max-width: 575px)
+    .description
+        padding: 0 40px
+
     .description_container
         padding: 71px 5px
-        margin: 0 48px
+        // margin: 0 48px
 
-        .description_specifications
-            width: auto
-            flex-direction: column
-            align-items: center
+    .description_specifications
+        width: auto
+        flex-direction: column
+        align-items: center
 
         .material
             &:not(:first-child)
