@@ -5,7 +5,7 @@ class Product {
         this.items = [];
         this.container = null;
         this.basket = null;
-        this.url = 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/product.json';
+        this.url = 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/brand-JSON/product.json';
     }
 
     init(basket) {

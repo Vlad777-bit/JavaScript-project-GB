@@ -5,7 +5,7 @@ class Single {
         this.items = [];
         this.container = null;
         this.basket = null;
-        this.url = 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/single.json';
+        this.url = 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/brand-JSON/single.json';
     }
 
     init(basket) {
@@ -74,7 +74,7 @@ class Single {
 //         items: [],
 //         container: null,
 //         basket: null,
-//         url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/single.json',
+//         url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/brand-JSON/single.json',
 //         init(basket) {
 //             this.container = document.querySelector('#single');
 //             this.basket = basket;

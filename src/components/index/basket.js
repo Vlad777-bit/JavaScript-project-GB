@@ -4,7 +4,7 @@ class Basket {
     constructor() {
         this.items = [];
         this.total = null;
-        this.url = 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/basket.json';
+        this.url = 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/brand-JSON/basket.json';
         this.container = null; // basket-items
         this.wrapper = null; //basket all
         this.sum = 0;

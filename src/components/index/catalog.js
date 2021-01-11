@@ -5,7 +5,7 @@ class Catalog {
         this.items = [];
         this.container = null;
         this.basket = null;
-        this.url = 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/catalog.json';
+        this.url = 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/brand-JSON/catalog.json';
     }
 
     init(basket) {
