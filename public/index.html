@@ -296,13 +296,12 @@
 	<script src="../src/components/index/catalog.js"></script>
 
 	<script>
-		var basket = initBasket();
+		var basket = new Basket();
 		basket.init();
 
-		var catalog = initCatalog();
+		var catalog = new Catalog();
 		catalog.init(basket);
-	</script>
-	
+	</script> 
 </body>
 
 </html>
