@@ -4,7 +4,7 @@ function initCatalog() {
         items: [],
         container: null,
         basket: null,
-        url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/catalog.json',
+        url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/brand-JSON/catalog.json',
         init(basket) {
             this.container = document.querySelector('#catalog');
             this.basket = basket;

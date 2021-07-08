@@ -2,7 +2,7 @@ function initBasket() {
     const basket = {
         items: [],
         total: null,
-        url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/basket.json',
+        url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/brand-JSON/basket.json',
         container: null, // basket-items
         wrapper: null, //basket all
         sum: 0,

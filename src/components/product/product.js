@@ -4,7 +4,7 @@ function initProduct() {
         items: [],
         container: null,
         basket: null,
-        url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/product.json',
+        url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/brand-JSON/product.json',
         init(basket) {
             this.container = document.querySelector('#product');
             this.basket = basket;

@@ -1,358 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
     <!-- other CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="../src/layout/css/style.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../src/layout/css/style.min.css" />
     <title>Checkout</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="container header_container">
-            <div class="top_content">
-                <div class="logo">
-                    <a href="#"><img src="../src/assets/img/promo/logo.png" alt="logo"></a>
-                    <div class="logo_text">
-                        <a href="#">BRAN<span>D</span></a>
-                    </div>
-                    <form action="#" class="form_header">
-                        <button class="browse">Browse
-                            <i class="fas fa-caret-down"></i>
-                        </button>
-                        <input type="text" placeholder="Search for Item..." class="header_input">
-                        <button class="search"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-                <div class="basket_block">
-                    <img src="../src/assets/img/promo/basket.svg" alt="basket">
-                    <button class="account">My Account
-                        <i class="fas fa-caret-down"></i>
-                    </button>
-                </div>
+      <div class="container header_container">
+        <div class="top_content">
+          <div class="logo">
+            <a href="#"
+              ><img src="../src/assets/img/promo/logo.png" alt="logo"
+            /></a>
+            <div class="logo_text">
+              <a href="#">BRAN<span>D</span></a>
             </div>
+            <form action="#" class="form_header">
+              <button class="browse">
+                Browse
+                <i class="fas fa-caret-down"></i>
+              </button>
+              <input
+                type="text"
+                placeholder="Search for Item..."
+                class="header_input"
+              />
+              <button class="search"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+
+          <div id="basket">
+            <button class="basket_button" name="basketBtn" id="basket-btn">
+              <img
+                src="../src/assets/img/promo/basket.svg"
+                alt="basket"
+                name="basketBtn"
+              />
+            </button>
+
+            <div id="basket-inner" class="hidden">
+              <div id="basket-items"></div>
+              <div>
+                <hr />
+                <div class="cart_total">
+                  <p>TOTAL</p>
+                  <p>$<span id="basket-sum"></span></p>
+                </div>
+                <button class="cart_btn">Checkout</button>
+                <button class="cart_btn">Go to cart</button>
+              </div>
+            </div>
+
+            <button class="account">
+              My Account
+              <i class="fas fa-caret-down"></i>
+            </button>
+          </div>
         </div>
+      </div>
     </header>
 
+    <button id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <nav class="menu_brand">
-        <div class="container">
-            <ul class="menu">
-                <li class="menu_list"><a href="index.html" class="menu_link">Home</a></li>
-                <li class="menu_list"><a href="#" class="menu_link active_link">Man</a></li>
-                <li class="menu_list"><a href="#" class="menu_link">Women</a></li>
-                <li class="menu_list"><a href="#" class="menu_link">Kids</a></li>
-                <li class="menu_list"><a href="#" class="menu_link">Accoseriese</a></li>
-                <li class="menu_list"><a href="#" class="menu_link">Featured</a></li>
-                <li class="menu_list"><a href="#" class="menu_link">Hot Deals</a></li>
-            </ul>
-        </div>
+      <div class="container">
+        <ul class="menu">
+          <li class="menu_list">
+            <a href="index.html" class="menu_link">Home</a>
+          </li>
+          <li class="menu_list">
+            <a href="#" class="menu_link active_link">Man</a>
+          </li>
+          <li class="menu_list"><a href="#" class="menu_link">Women</a></li>
+          <li class="menu_list"><a href="#" class="menu_link">Kids</a></li>
+          <li class="menu_list">
+            <a href="#" class="menu_link">Accoseriese</a>
+          </li>
+          <li class="menu_list"><a href="#" class="menu_link">Featured</a></li>
+          <li class="menu_list"><a href="#" class="menu_link">Hot Deals</a></li>
+        </ul>
+      </div>
     </nav>
 
     <section class="arrivals">
-        <div class="container arrivals_container">
-            <div class="arrivals_title">New Arrivals</div>
-            <div class="arrivals_crump"><a href="#">Home</a> / <a href="#">Men</a> / <span>New Arrivals</span></div>
+      <div class="container arrivals_container">
+        <div class="arrivals_title">New Arrivals</div>
+        <div class="arrivals_crump">
+          <a href="#">Home</a> / <a href="#">Men</a> / <span>New Arrivals</span>
         </div>
+      </div>
     </section>
 
     <section class="dropdown">
-        <div class="container dropdown_container">
-            <details class="dropdown_list">
-                <summary class="dropdown_header">
-                    <span class="dropdown_title">
-                        01. Shipping Adress
-                    </span>
-                </summary>
-                <div class="dropdown_blocks">
-                    <div class="dropdown_registration">
-                        <div class="register_title">Check as a guest or register</div>
-                        <div class="register_subtitle">Register with us for future convenience</div>
-                        <form class="register_form">
-                            <input type="radio" id="checkout" name="check_radio">
-                            <label for="checkout">checkout as guest</label>
-                            <br>
-                            <input type="radio" id="register" name="check_radio">
-                            <label for="register">register</label>
-                        </form>
-                        <div class="register_title register_save">register and save time!</div>
-                        <div class="register_subtitle">Register with us for future convenience</div>
-                        <br>
-                        <div class="register_subtitle">
-                            <i class="fas fa-angle-double-right"></i> Fast and easy checkout
-                        </div>
-                        <div class="register_subtitle">
-                            <i class="fas fa-angle-double-right"></i> Easy access to your order history and status
-                        </div>
-                        <button class="dropdown_btn">Continue</button>
-                    </div>
-                    <div class="line_adaptive"></div>
-                    <div class="dropdown_login">
-                        <div class="login_title">Already registed?</div>
-                        <div class="login_subtitle">Please log in below</div>
-                        <form class="login_form">
-                            <label>EMAIL ADDRESS <span>*</span></label>
-                            <br>
-                            <input type="email">
-                            <br>
-                            <label>PASSWORD <span>*</span></label>
-                            <br>
-                            <input type="password">
-                        </form>
-                        <div class="hint">* Required Fileds</div>
-                        <div class="form_btn">
-                            <button class="dropdown_btn">Log in</button>
-                            <a href="#" class="forgot">Forgot Password ?</a>
-                        </div>
-                    </div>
-                </div>
-            </details>
+      <div class="container dropdown_container">
+        <details class="dropdown_list">
+          <summary class="dropdown_header">
+            <span class="dropdown_title"> 01. Shipping Adress </span>
+          </summary>
+          <div class="dropdown_blocks">
+            <div class="dropdown_registration">
+              <div class="register_title">Check as a guest or register</div>
+              <div class="register_subtitle">
+                Register with us for future convenience
+              </div>
+              <form class="register_form">
+                <input type="radio" id="checkout" name="check_radio" />
+                <label for="checkout">checkout as guest</label>
+                <br />
+                <input type="radio" id="register" name="check_radio" />
+                <label for="register">register</label>
+              </form>
+              <div class="register_title register_save">
+                register and save time!
+              </div>
+              <div class="register_subtitle">
+                Register with us for future convenience
+              </div>
+              <br />
+              <div class="register_subtitle">
+                <i class="fas fa-angle-double-right"></i> Fast and easy checkout
+              </div>
+              <div class="register_subtitle">
+                <i class="fas fa-angle-double-right"></i> Easy access to your
+                order history and status
+              </div>
+              <button class="dropdown_btn">Continue</button>
+            </div>
+            <div class="line_adaptive"></div>
+            <div class="dropdown_login">
+              <div class="login_title">Already registed?</div>
+              <div class="login_subtitle">Please log in below</div>
+              <form class="login_form">
+                <label>EMAIL ADDRESS <span>*</span></label>
+                <br />
+                <input type="email" />
+                <br />
+                <label>PASSWORD <span>*</span></label>
+                <br />
+                <input type="password" />
+              </form>
+              <div class="hint">* Required Fileds</div>
+              <div class="form_btn">
+                <button class="dropdown_btn">Log in</button>
+                <a href="#" class="forgot">Forgot Password ?</a>
+              </div>
+            </div>
+          </div>
+        </details>
 
-            <details class="dropdown_list">
-                <summary class="dropdown_header">
-                    <span class="dropdown_title">
-                        02. BILLING INFORMATION
-                    </span>
-                </summary>
-                <div class="dropdown_blocks">
-                    <div class="dropdown_registration">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum rem voluptatibus amet pariatur
-                        debitis possimus voluptates accusantium porro error et aspernatur quibusdam aut nisi consectetur
-                        labore enim maxime, aliquid facere. Quod quibusdam labore quia, excepturi nihil veritatis. Nisi
-                        nihil sapiente dicta necessitatibus adipisci, commodi, iusto tempora, quaerat eius excepturi
-                        asperiores!
-                    </div>
-                    <div class="line_adaptive"></div>
-                    <div class="dropdown_login">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat cum tenetur doloribus placeat.
-                        Facere ipsum iste explicabo nisi aspernatur vitae excepturi placeat aliquid tempora beatae
-                        voluptas, cupiditate nostrum praesentium expedita consectetur eius dolorum. Nam harum quae non
-                        rem, rerum similique vitae dignissimos eligendi alias error cum amet. Nobis, accusantium
-                        consequuntur.
-                    </div>
-                </div>
-            </details>
+        <details class="dropdown_list">
+          <summary class="dropdown_header">
+            <span class="dropdown_title"> 02. BILLING INFORMATION </span>
+          </summary>
+          <div class="dropdown_blocks">
+            <div class="dropdown_registration">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
+              rem voluptatibus amet pariatur debitis possimus voluptates
+              accusantium porro error et aspernatur quibusdam aut nisi
+              consectetur labore enim maxime, aliquid facere. Quod quibusdam
+              labore quia, excepturi nihil veritatis. Nisi nihil sapiente dicta
+              necessitatibus adipisci, commodi, iusto tempora, quaerat eius
+              excepturi asperiores!
+            </div>
+            <div class="line_adaptive"></div>
+            <div class="dropdown_login">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
+              cum tenetur doloribus placeat. Facere ipsum iste explicabo nisi
+              aspernatur vitae excepturi placeat aliquid tempora beatae
+              voluptas, cupiditate nostrum praesentium expedita consectetur eius
+              dolorum. Nam harum quae non rem, rerum similique vitae dignissimos
+              eligendi alias error cum amet. Nobis, accusantium consequuntur.
+            </div>
+          </div>
+        </details>
 
-            <details class="dropdown_list">
-                <summary class="dropdown_header">
-                    <span class="dropdown_title">
-                        03. SHIPPING INFORMATION
-                    </span>
-                </summary>
-                <div class="dropdown_blocks">
-                    <div class="dropdown_registration">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum rem voluptatibus amet pariatur
-                        debitis possimus voluptates accusantium porro error et aspernatur quibusdam aut nisi consectetur
-                        labore enim maxime, aliquid facere. Quod quibusdam labore quia, excepturi nihil veritatis. Nisi
-                        nihil sapiente dicta necessitatibus adipisci, commodi, iusto tempora, quaerat eius excepturi
-                        asperiores!
-                    </div>
-                    <div class="line_adaptive"></div>
-                    <div class="dropdown_login">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat cum tenetur doloribus placeat.
-                        Facere ipsum iste explicabo nisi aspernatur vitae excepturi placeat aliquid tempora beatae
-                        voluptas, cupiditate nostrum praesentium expedita consectetur eius dolorum. Nam harum quae non
-                        rem, rerum similique vitae dignissimos eligendi alias error cum amet. Nobis, accusantium
-                        consequuntur.
-                    </div>
-                </div>
-            </details>
+        <details class="dropdown_list">
+          <summary class="dropdown_header">
+            <span class="dropdown_title"> 03. SHIPPING INFORMATION </span>
+          </summary>
+          <div class="dropdown_blocks">
+            <div class="dropdown_registration">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
+              rem voluptatibus amet pariatur debitis possimus voluptates
+              accusantium porro error et aspernatur quibusdam aut nisi
+              consectetur labore enim maxime, aliquid facere. Quod quibusdam
+              labore quia, excepturi nihil veritatis. Nisi nihil sapiente dicta
+              necessitatibus adipisci, commodi, iusto tempora, quaerat eius
+              excepturi asperiores!
+            </div>
+            <div class="line_adaptive"></div>
+            <div class="dropdown_login">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
+              cum tenetur doloribus placeat. Facere ipsum iste explicabo nisi
+              aspernatur vitae excepturi placeat aliquid tempora beatae
+              voluptas, cupiditate nostrum praesentium expedita consectetur eius
+              dolorum. Nam harum quae non rem, rerum similique vitae dignissimos
+              eligendi alias error cum amet. Nobis, accusantium consequuntur.
+            </div>
+          </div>
+        </details>
 
-            <details class="dropdown_list">
-                <summary class="dropdown_header">
-                    <span class="dropdown_title">
-                        04. SHIPPING METHOD
-                    </span>
-                </summary>
-                <div class="dropdown_blocks">
-                    <div class="dropdown_registration">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum rem voluptatibus amet pariatur
-                        debitis possimus voluptates accusantium porro error et aspernatur quibusdam aut nisi consectetur
-                        labore enim maxime, aliquid facere. Quod quibusdam labore quia, excepturi nihil veritatis. Nisi
-                        nihil sapiente dicta necessitatibus adipisci, commodi, iusto tempora, quaerat eius excepturi
-                        asperiores!
-                    </div>
-                    <div class="line_adaptive"></div>
-                    <div class="dropdown_login">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat cum tenetur doloribus placeat.
-                        Facere ipsum iste explicabo nisi aspernatur vitae excepturi placeat aliquid tempora beatae
-                        voluptas, cupiditate nostrum praesentium expedita consectetur eius dolorum. Nam harum quae non
-                        rem, rerum similique vitae dignissimos eligendi alias error cum amet. Nobis, accusantium
-                        consequuntur.
-                    </div>
-                </div>
-            </details>
+        <details class="dropdown_list">
+          <summary class="dropdown_header">
+            <span class="dropdown_title"> 04. SHIPPING METHOD </span>
+          </summary>
+          <div class="dropdown_blocks">
+            <div class="dropdown_registration">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
+              rem voluptatibus amet pariatur debitis possimus voluptates
+              accusantium porro error et aspernatur quibusdam aut nisi
+              consectetur labore enim maxime, aliquid facere. Quod quibusdam
+              labore quia, excepturi nihil veritatis. Nisi nihil sapiente dicta
+              necessitatibus adipisci, commodi, iusto tempora, quaerat eius
+              excepturi asperiores!
+            </div>
+            <div class="line_adaptive"></div>
+            <div class="dropdown_login">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
+              cum tenetur doloribus placeat. Facere ipsum iste explicabo nisi
+              aspernatur vitae excepturi placeat aliquid tempora beatae
+              voluptas, cupiditate nostrum praesentium expedita consectetur eius
+              dolorum. Nam harum quae non rem, rerum similique vitae dignissimos
+              eligendi alias error cum amet. Nobis, accusantium consequuntur.
+            </div>
+          </div>
+        </details>
 
-            <details class="dropdown_list">
-                <summary class="dropdown_header">
-                    <span class="dropdown_title">
-                        05. PAYMENT METHOD
-                    </span>
-                </summary>
-                <div class="dropdown_blocks">
-                    <div class="dropdown_registration">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum rem voluptatibus amet pariatur
-                        debitis possimus voluptates accusantium porro error et aspernatur quibusdam aut nisi consectetur
-                        labore enim maxime, aliquid facere. Quod quibusdam labore quia, excepturi nihil veritatis. Nisi
-                        nihil sapiente dicta necessitatibus adipisci, commodi, iusto tempora, quaerat eius excepturi
-                        asperiores!
-                    </div>
-                    <div class="line_adaptive"></div>
-                    <div class="dropdown_login">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat cum tenetur doloribus placeat.
-                        Facere ipsum iste explicabo nisi aspernatur vitae excepturi placeat aliquid tempora beatae
-                        voluptas, cupiditate nostrum praesentium expedita consectetur eius dolorum. Nam harum quae non
-                        rem, rerum similique vitae dignissimos eligendi alias error cum amet. Nobis, accusantium
-                        consequuntur.
-                    </div>
-                </div>
-            </details>
+        <details class="dropdown_list">
+          <summary class="dropdown_header">
+            <span class="dropdown_title"> 05. PAYMENT METHOD </span>
+          </summary>
+          <div class="dropdown_blocks">
+            <div class="dropdown_registration">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
+              rem voluptatibus amet pariatur debitis possimus voluptates
+              accusantium porro error et aspernatur quibusdam aut nisi
+              consectetur labore enim maxime, aliquid facere. Quod quibusdam
+              labore quia, excepturi nihil veritatis. Nisi nihil sapiente dicta
+              necessitatibus adipisci, commodi, iusto tempora, quaerat eius
+              excepturi asperiores!
+            </div>
+            <div class="line_adaptive"></div>
+            <div class="dropdown_login">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
+              cum tenetur doloribus placeat. Facere ipsum iste explicabo nisi
+              aspernatur vitae excepturi placeat aliquid tempora beatae
+              voluptas, cupiditate nostrum praesentium expedita consectetur eius
+              dolorum. Nam harum quae non rem, rerum similique vitae dignissimos
+              eligendi alias error cum amet. Nobis, accusantium consequuntur.
+            </div>
+          </div>
+        </details>
 
-            <details class="dropdown_list">
-                <summary class="dropdown_header">
-                    <span class="dropdown_title">
-                        06. ORDER REVIEW
-                    </span>
-                </summary>
-                <div class="dropdown_blocks">
-                    <div class="dropdown_registration">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum rem voluptatibus amet pariatur
-                        debitis possimus voluptates accusantium porro error et aspernatur quibusdam aut nisi consectetur
-                        labore enim maxime, aliquid facere. Quod quibusdam labore quia, excepturi nihil veritatis. Nisi
-                        nihil sapiente dicta necessitatibus adipisci, commodi, iusto tempora, quaerat eius excepturi
-                        asperiores!
-                    </div>
-                    <div class="line_adaptive"></div>
-                    <div class="dropdown_login">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat cum tenetur doloribus placeat.
-                        Facere ipsum iste explicabo nisi aspernatur vitae excepturi placeat aliquid tempora beatae
-                        voluptas, cupiditate nostrum praesentium expedita consectetur eius dolorum. Nam harum quae non
-                        rem, rerum similique vitae dignissimos eligendi alias error cum amet. Nobis, accusantium
-                        consequuntur.
-                    </div>
-                </div>
-            </details>
-        </div>
+        <details class="dropdown_list">
+          <summary class="dropdown_header">
+            <span class="dropdown_title"> 06. ORDER REVIEW </span>
+          </summary>
+          <div class="dropdown_blocks">
+            <div class="dropdown_registration">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
+              rem voluptatibus amet pariatur debitis possimus voluptates
+              accusantium porro error et aspernatur quibusdam aut nisi
+              consectetur labore enim maxime, aliquid facere. Quod quibusdam
+              labore quia, excepturi nihil veritatis. Nisi nihil sapiente dicta
+              necessitatibus adipisci, commodi, iusto tempora, quaerat eius
+              excepturi asperiores!
+            </div>
+            <div class="line_adaptive"></div>
+            <div class="dropdown_login">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
+              cum tenetur doloribus placeat. Facere ipsum iste explicabo nisi
+              aspernatur vitae excepturi placeat aliquid tempora beatae
+              voluptas, cupiditate nostrum praesentium expedita consectetur eius
+              dolorum. Nam harum quae non rem, rerum similique vitae dignissimos
+              eligendi alias error cum amet. Nobis, accusantium consequuntur.
+            </div>
+          </div>
+        </details>
+      </div>
     </section>
 
     <section class="beach">
-        <div class="container">
-            <div class="beach_content">
-                <div class="feedback">
-                    <div class="feedback_face"></div>
-                    <div class="feedback_column">
-                        <div class="feedback_text">
-                            “Vestibulum quis porttitor dui! Quisque viverra nunc mi,
-                            a pulvinar purus condimentum a. Aliquam condimentum
-                            mattis neque sed pretium”
-                        </div>
-                        <div class="feedback_name">
-                            <span>Bin Burhan</span>
-                            <br>
-                            Dhaka, Bd
-                        </div>
-                        <div class="slider">
-                            <a href="#" class="feedback_slide"></a>
-                            <a href="#" class="feedback_slide"></a>
-                            <a href="#" class="feedback_slide"></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="line"></div>
-                <div class="subscribe">
-                    <div class="subscribe_title">
-                        Subscribe
-                        <br>
-                        <span>FOR OUR NEWLETTER AND PROMOTION</span>
-                    </div>
-                    <form action="#">
-                        <input type="email" placeholder="Enter Your Email" class="subscribe_input">
-                        <button class="subscribe_btn">Subscribe</button>
-                    </form>
-                </div>
+      <div class="container">
+        <div class="beach_content">
+          <div class="feedback">
+            <div class="feedback_face"></div>
+            <div class="feedback_column">
+              <div class="feedback_text">
+                “Vestibulum quis porttitor dui! Quisque viverra nunc mi, a
+                pulvinar purus condimentum a. Aliquam condimentum mattis neque
+                sed pretium”
+              </div>
+              <div class="feedback_name">
+                <span>Bin Burhan</span>
+                <br />
+                Dhaka, Bd
+              </div>
+              <div class="slider">
+                <a href="#" class="feedback_slide"></a>
+                <a href="#" class="feedback_slide"></a>
+                <a href="#" class="feedback_slide"></a>
+              </div>
             </div>
+          </div>
+          <div class="line"></div>
+          <div class="subscribe">
+            <div class="subscribe_title">
+              Subscribe
+              <br />
+              <span>FOR OUR NEWLETTER AND PROMOTION</span>
+            </div>
+            <form action="#">
+              <input
+                type="email"
+                placeholder="Enter Your Email"
+                class="subscribe_input"
+              />
+              <button class="subscribe_btn">Subscribe</button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="footer">
-        <div class="container">
-            <div class="footer_blocks">
-                <div class="footer_column footer_column_block">
-                    <div class="footer_logo">
-                        <a href="#"><img src="../src/assets/img/promo/logo.png" alt="logo"></a>
-                        <div class="logo_text">
-                            <a href="#">BRAN<span>D</span></a>
-                        </div>
-                    </div>
-                    <div class="footer_text">
-                        Objectively transition extensive data rather than cross functional solutions. Monotonectally
-                        syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an
-                        expanded array of processes and cross-unit partnerships.
-                        <br>
-                        <br>
-                        <br>
-                        Efficiently plagiarize 24/365 action items and focused infomediaries.
-                        Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
-                    </div>
-                </div>
-                <div class="footer_columns_group">
-                    <div class="footer_column">
-                        <div class="footer_title">COMPANY</div>
-                        <a href="#" class="footer_link">Home</a>
-                        <a href="#" class="footer_link">Shop</a>
-                        <a href="#" class="footer_link">About</a>
-                        <a href="#" class="footer_link">How It Works</a>
-                        <a href="#" class="footer_link">Contact</a>
-                    </div>
-                    <div class="footer_column">
-                        <div class="footer_title">INFORMATION</div>
-                        <a href="#" class="footer_link">Tearms & Condition</a>
-                        <a href="#" class="footer_link">Privacy Policy</a>
-                        <a href="#" class="footer_link">How to Buy</a>
-                        <a href="#" class="footer_link">How to Sell</a>
-                        <a href="#" class="footer_link">Promotion</a>
-                    </div>
-                    <div class="footer_column">
-                        <div class="footer_title">SHOP CATEGORY</div>
-                        <a href="#" class="footer_link">Men</a>
-                        <a href="#" class="footer_link">Women</a>
-                        <a href="#" class="footer_link">Child</a>
-                        <a href="#" class="footer_link">Apparel</a>
-                        <a href="#" class="footer_link">Brows All</a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer_blocks">
+          <div class="footer_column footer_column_block">
+            <div class="footer_logo">
+              <a href="#"
+                ><img src="../src/assets/img/promo/logo.png" alt="logo"
+              /></a>
+              <div class="logo_text">
+                <a href="#">BRAN<span>D</span></a>
+              </div>
             </div>
+            <div class="footer_text">
+              Objectively transition extensive data rather than cross functional
+              solutions. Monotonectally syndicate multidisciplinary materials
+              before go forward benefits. Intrinsicly syndicate an expanded
+              array of processes and cross-unit partnerships.
+              <br />
+              <br />
+              <br />
+              Efficiently plagiarize 24/365 action items and focused
+              infomediaries. Distinctively seize superior initiatives for
+              wireless technologies. Dynamically optimize.
+            </div>
+          </div>
+          <div class="footer_columns_group">
+            <div class="footer_column">
+              <div class="footer_title">COMPANY</div>
+              <a href="#" class="footer_link">Home</a>
+              <a href="#" class="footer_link">Shop</a>
+              <a href="#" class="footer_link">About</a>
+              <a href="#" class="footer_link">How It Works</a>
+              <a href="#" class="footer_link">Contact</a>
+            </div>
+            <div class="footer_column">
+              <div class="footer_title">INFORMATION</div>
+              <a href="#" class="footer_link">Tearms & Condition</a>
+              <a href="#" class="footer_link">Privacy Policy</a>
+              <a href="#" class="footer_link">How to Buy</a>
+              <a href="#" class="footer_link">How to Sell</a>
+              <a href="#" class="footer_link">Promotion</a>
+            </div>
+            <div class="footer_column">
+              <div class="footer_title">SHOP CATEGORY</div>
+              <a href="#" class="footer_link">Men</a>
+              <a href="#" class="footer_link">Women</a>
+              <a href="#" class="footer_link">Child</a>
+              <a href="#" class="footer_link">Apparel</a>
+              <a href="#" class="footer_link">Brows All</a>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <footer class="copyright">
-        <div class="container footer_container">
-            <div class="copyright_block">
-                &copy; 2017 Brand All Rights Reserved.
-            </div>
-            <div class="social">
-                <a href="https://www.facebook.com/" target="_blank" class="social_link"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/?lang=ru" target="_blank" class="social_link"><i
-                        class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/login?fromSignIn=true" target="_blank" class="social_link"><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.pinterest.com/" target="_blank" class="social_link"><i
-                        class="fab fa-pinterest-p"></i></a>
-                <a href="https://myaccount.google.com/?utm_source=sign_in_no_continue" target="_blank"
-                    class="social_link"><i class="fab fa-google-plus-g"></i></a>
-                <!-- Ссылку на Google+ не нашёл -->
-            </div>
+      <div class="container footer_container">
+        <div class="copyright_block">
+          &copy; 2017 Brand All Rights Reserved.
         </div>
+        <div class="social">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            class="social_link"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://twitter.com/?lang=ru"
+            target="_blank"
+            class="social_link"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/login?fromSignIn=true"
+            target="_blank"
+            class="social_link"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://www.pinterest.com/"
+            target="_blank"
+            class="social_link"
+            ><i class="fab fa-pinterest-p"></i
+          ></a>
+          <a
+            href="https://myaccount.google.com/?utm_source=sign_in_no_continue"
+            target="_blank"
+            class="social_link"
+            ><i class="fab fa-google-plus-g"></i
+          ></a>
+          <!-- Ссылку на Google+ не нашёл -->
+        </div>
+      </div>
     </footer>
-</body>
 
+    <script src="../src/components/index/basket.js"></script>
+    <script src="../src/components/index/hamburger.js"></script>
+
+    <script>
+      var basket = initBasket();
+      basket.init();
+    </script>
+  </body>
 </html>

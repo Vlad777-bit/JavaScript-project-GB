@@ -4,7 +4,7 @@ function initSingle() {
         items: [],
         container: null,
         basket: null,
-        url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/single.json',
+        url: 'https://raw.githubusercontent.com/Vlad777-bit/static/master/JSON/brand-JSON/single.json',
         init(basket) {
             this.container = document.querySelector('#single');
             this.basket = basket;
