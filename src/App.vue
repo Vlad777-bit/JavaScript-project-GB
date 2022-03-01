@@ -1,10 +1,15 @@
 <template>
-  <h1>Hello Vue</h1>
+  <VHeader />
 </template>
 
 <script>
+import VHeader from "./layout/Header/VHeader";
+
 export default {
   name: "App",
+  components: {
+    VHeader,
+  },
 };
 </script>
 
