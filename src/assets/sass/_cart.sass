@@ -1,0 +1,107 @@
+#basket
+    display: flex
+    position: relative
+    cursor: pointer
+    margin-left: auto
+
+#basket-inner
+    width: 262px
+    background-color: #ffffff
+    border-radius: 5px
+    padding: 20px 15px
+    position: absolute
+    top: 57px
+    left: -14px
+    display: block
+    z-index: 3
+
+.hidden
+    display: none !important
+
+.basket_info
+    display: flex
+    justify-content: space-around
+    align-items: center
+    margin: 10px 0 10px 0
+    padding: 6px 0 16px 0
+    border-bottom: 1px solid rgba(0,0,0,.1)
+
+    &:last-child
+        border-bottom: none
+
+    img
+        display: block
+        width: 72px
+        height: 85px
+
+.basket_button
+    border: none
+    background: rgba(0, 0, 0, 0)
+    margin-right: 15px
+
+.cart_descr
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    margin-left: 5px
+
+.cart_title
+    font-size: 12px
+    line-height: normal
+    font-weight: 700
+    text-transform: uppercase
+    color: #222222
+
+.cart_price
+    font-size: 12px
+    line-height: normal
+    font-weight: 400
+    text-transform: uppercase
+     color: #f16d7f // $main_color
+
+.cart_close
+    display: block
+
+    &:before
+        color: #c0c0c0
+
+.cart_total
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    #basket-sum, p
+        font-size: 16px
+        line-height: normal
+        font-weight: 700
+        text-transform: uppercase
+        color: #222222
+
+.cart_btn
+    width: 100%
+    min-height: 50px
+    background-color: #ffffff
+    border: 1px solid #eaeaea
+    // text
+    font-size: 14px
+    line-height: normal
+    font-weight: 700
+    text-transform: uppercase
+    color: #4a4a4a
+    transition: 0.5s all //$s_transition
+
+    &:not(:first-child)
+        margin-top: 11px
+
+    &:hover
+        border: 1px solid #f16d7f
+        color: #f16d7f
+
+.cart_close
+    text-decoration: none
+    font-size: 16px
+    color: #000
+    margin-left: 15px
+
+    &:hover
+        text-decoration: none

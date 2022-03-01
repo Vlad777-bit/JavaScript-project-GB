@@ -1,0 +1,1040 @@
+// INDEX	
+
+.header
+	width: 100%
+	min-height: 100px
+	background-color: #ffffff
+	border: 1px solid #ececec
+	padding: 31px 0 31px 0
+
+.container
+	width: 1140px
+	margin: 0 auto
+	padding: 0
+	.top_content
+		display: flex
+		justify-content: space-between
+		align-items: center
+	.logo
+		display: flex
+		align-items: flex-end
+		img
+			margin-right: 10px
+		&_text
+			span
+				font-weight: 900
+				color: #f16d7f
+				margin-right: 37px
+			a
+				font-size: 27px
+				font-weight: 300
+				text-transform: uppercase
+				letter-spacing: 0.025em
+				color: #222222
+				text-decoration: none
+	.form_header
+		display: flex
+		.browse
+			width: 87px
+			height: 38px
+			background-color: #cdcdcc
+			background-image: linear-gradient(180.0deg, #f9f9f9 0%, #f5f5f5 100%)
+			border: 1px solid #e6e6e6
+			border-radius: 3px 0 0 3px
+			// text
+			font-size: 14px
+			font-weight: 300
+			letter-spacing: 0.025em
+			color: #222222
+			.fa-caret-down
+				color: #838383
+		.header_input
+			width: 317px
+			height: 38px
+			background-color: #ffffff
+			border: 1px solid #e6e6e6
+			padding: 16px 14px
+			border-left: none
+			border-right: none
+			outline: none
+			// text
+			font-size: 14px
+			font-weight: 300
+			letter-spacing: 0.025em
+			color: #a4a4a4
+		.search
+			width: 35px
+			height: 38px
+			background-color: #ffffff
+			border: 1px solid #e6e6e6
+			border-radius: 0 3px 3px 0px
+			color: #a4a4a4
+			outline: none
+	.account
+		width: 130px
+		min-height: 38px
+		background-color: #f16d7f
+		border: none
+		border-radius: 3px
+		// text
+		font-size: 15px
+		font-weight: 400
+		letter-spacing: 0.025em
+		color: #ffffff
+		transition: $s_transition
+		&:hover
+			opacity: 0.67
+			background-color: #e1e1e1
+			color: #222224
+
+.promo
+	height: 610px
+	background-color: #e8e8e8
+	&_container
+		height: inherit
+		background: url(../../assets/img///promo/men.png) no-repeat 554px 0
+		background-size: 550px
+		display: flex
+		align-items: center
+	&_content
+		min-height: 99px
+		border-left: 12px solid #f16d7f
+		padding-left: 12px
+	&_title
+		font-size: 60px
+		font-weight: 900
+		line-height: 52px
+		letter-spacing: 0.025em
+		color: #222222
+		margin: 0
+	&_subtitle
+		font-weight: 600
+		font-size: 40px
+		line-height: 32px
+		margin: 19px 0 0 0
+		span
+			font-size: 40px
+			color: #f16d7f
+
+.category
+	margin-top: 98px
+	&_container
+		display: grid
+		grid-template-columns: repeat(2, 560px)
+		justify-content: space-between
+		grid-row-gap: 21px
+		grid-column-gap: 21px
+	&_img_1
+		width: 100%
+		background-image: url('../../assets/img/category/category_promo1.jpg')
+		background-repeat: no-repeat
+	&_img_2
+		width: 100%
+		background-image: url('../../assets/img/category/category_promo2.jpg')
+		background-repeat: no-repeat
+	&_img_3
+		width: 100%
+		background-image: url('../../assets/img/category/category_promo3.jpg')
+		background-repeat: no-repeat
+	&_img_4
+		width: 100%
+		background-image: url('../../assets/img/category/category_promo4.jpg')
+		background-repeat: no-repeat
+		margin-top: -281px
+	&_big
+		width: 560px
+		height: 542px
+	&_little
+		width: 560px
+		height: 261px
+	&_text
+		background-color: #ffffff
+		margin-top: 26px
+		padding: 16px 20px
+		// text
+		font-size: 17px
+		line-height: 1.2
+		font-weight: 900
+		text-transform: uppercase
+		letter-spacing: 0.025em
+		color: #222222
+		span
+			font-size: 28px
+			color: #f16d7f
+	.block_size1
+		width: 175px
+		min-height: 82px
+	.block_size2
+		width: 162px
+		min-height: 82px
+	.block_size3
+		width: 225px
+		min-height: 82px
+	.block_size4
+		width: 180px
+		min-height: 82px
+
+.product
+	margin-top: 100px
+	&_header
+		text-align: center
+	&_title
+		font-size: 30px
+		line-height: 27px
+		font-weight: 700
+		letter-spacing: 0.025em
+		color: #222222
+	&_subtitle
+		margin-top: 10px
+		font-size: 14px
+		font-weight: 400
+		letter-spacing: 0.025em
+		color: #9f9f9f
+	&_list
+		margin-top: 60px
+		display: grid
+		grid-template-columns: repeat(auto-fit, 263px)
+		justify-content: space-between
+		grid-row-gap: 39px
+		grid-column-gap: 29px
+	&_items
+		width: 100%
+		height: inherit
+		position: relative
+		transition: $s_transition
+		&:hover
+			box-shadow: 0 5px 8px 0 rgba(0,0,0,0.15)
+		.prewive
+			display: none
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			padding: 34% 3%
+			transition: $s_transition
+			.add
+				width: 50%
+				padding: 10px 5px
+				border: 1px solid #ffffff
+				border-radius: 3px
+				display: flex
+				align-items: center
+				justify-content: center
+				margin: 0 auto
+				background-color: rgba(0, 0, 0, 0)
+				// text
+				font-size: 13px
+				line-height: 1.2
+				font-weight: 700
+				color: #ffffff
+			.basket_white
+				width: 22px
+				height: 23px
+				margin-right: 8px
+		&:hover .prewive
+			display: block
+			background-color: rgba(58,56,56,0.83)
+			cursor: pointer
+			height: 280px
+		img
+			width: 100%
+			height: 280px
+	.items_text
+		@extend %context_product
+	.all_product_btn
+		width: 212px
+		height: 48px
+		background-color: #f16d7f
+		border: none
+		display: block
+		text-align: center
+		padding: 0
+		margin: 0 auto
+		margin-top: 80px
+		// text
+		font-size: 16px
+		font-weight: 700
+		letter-spacing: 0.025em
+		color: #ffffff
+		transition: $s_transition
+		&:hover
+			opacity: 0.67
+			background-color: #e1e1e1
+			color: #222224
+		.arrow
+			margin-left: 10px
+
+.women
+	margin-top: 113px
+	&_container
+		background-color: #222224
+		min-height: 529px
+		display: flex
+	&_img
+		width: 767px
+		background-image: url('../../assets/img/women/women.jpg')
+		background-repeat: no-repeat
+		padding: 146px 0 0 39px
+	&_content
+		font-size: 53.7px
+		line-height: 1.2
+		font-weight: 700
+		letter-spacing: 0.025em
+		color: #ffffff
+		span
+			color: #f16d7f
+		.for
+			font-size: 32px
+	.right_block
+		width: 373px
+		padding: 48px 43px 0 36px
+		.conditions
+			display: flex
+			align-items: flex-start
+			justify-content: space-between
+			.car
+				margin-right: 33px
+			.percent
+				margin-right: 39px
+			.crown
+				margin-right: 30px
+			&_title
+				margin-top: 17px
+				font-size: 20px
+				line-height: 1.2
+				font-weight: 700
+				letter-spacing: 0.025em
+				color: #fbfbfb
+			&_text p
+				margin-left: 82px
+				min-height: 58px
+				font-size: 14px
+				line-height: 20px
+				font-weight: 300
+				letter-spacing: 0.025em
+				color: #fbfbfb
+
+.beach
+	margin-top: 97px
+	min-height: 438px
+	background: url('../../assets/img/beach/beach.jpg') no-repeat center bottom, #ccc
+	background-size: cover
+	&_content
+		display: flex
+		justify-content: space-between
+		.feedback
+			width: 50%
+			min-height: 438px
+			display: flex
+			justify-content: space-between
+			padding: 111px 72px 156px 0
+			&_face
+				width: 83px
+				height: 83px
+				background-image: url('../../assets/img/beach/face.png')
+			&_column
+				height: 170px
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+			&_text
+				width: 370px
+				font-size: 15px
+				line-height: 26px
+				font-weight: 400
+				font-style: italic
+				letter-spacing: 0.025em
+				color: #222224
+			&_name
+				margin-top: 0
+				font-size: 12px
+				line-height: 14px
+				font-weight: 300
+				color: #222224
+				span
+					font-size: 16px
+					font-weight: 700
+					letter-spacing: 0.025em
+					color: #f16d7f
+			.slider
+				width: 140px
+				display: flex
+				justify-content: space-between
+				a
+					width: 38px
+					height: 4px
+					background-color: #d6d6d6
+					transition: $s_transition
+					&:hover
+						background-color: #f16d7f
+		.line
+			width: 1px
+			min-height: 438px
+			background-color: #ffffff
+		.subscribe
+			width: 50%
+			min-height: 438px
+			padding: 148px 20px 168px 92px
+			&_title
+				font-size: 24px
+				font-weight: 400
+				text-transform: uppercase
+				letter-spacing: 0.025em
+				color: #222224
+				text-align: center
+				span
+					font-size: 14px
+					text-transform: none
+			&_input
+				margin-top: 20px
+				width: 334px
+				height: 46px
+				background-color: #e1e1e1
+				border: none
+				border-top-left-radius: 23px
+				border-bottom-left-radius: 23px
+				padding: 18px 28px
+				float: left
+				outline: none
+				// text
+				opacity: 0.67
+				font-size: 14px
+				font-weight: 400
+				letter-spacing: 0.025em
+				color: #222224
+			&_btn
+				margin-top: 20px
+				min-width: 104px
+				height: 46px
+				background-color: #f16d7f
+				border-radius: 0 23px 23px 0
+				border: none
+				outline: none
+				// text
+				font-size: 14px
+				font-weight: 400
+				letter-spacing: 0.025em
+				color: #ffffff
+				transition: $s_transition
+				&:hover
+					opacity: 0.67
+					background-color: #e1e1e1
+					color: #222224
+
+.footer
+	padding: 109px 0 89px 0
+	&_blocks
+		display: flex
+		justify-content: space-between
+	&_columns_group
+		display: flex
+		justify-content: space-between
+		width: 50%
+	&_column
+		display: flex
+		flex-direction: column
+	&_logo
+		display: flex
+		align-items: flex-end
+		margin-bottom: 30px
+		a
+			margin-right: 13px
+	&_text
+		width: 427px
+		font-size: 14px
+		line-height: 24px
+		font-weight: 300
+		letter-spacing: 0.025em
+		color: #898989
+	&_title
+		font-size: 18px
+		font-weight: 700
+		letter-spacing: 0.025em
+		color: #f16d7f
+		margin-bottom: 45px
+	&_link
+		font-size: 16px
+		font-weight: 400
+		letter-spacing: 0.025em
+		color: #898989
+		transition: $s_transition
+		&:not(:last-child)
+			margin-bottom: 25px
+		&:hover
+			color: #f16d7f
+			text-decoration: none
+
+.copyright
+	min-height: 80px
+	background-color: #e6e6e6
+	.footer_container
+		min-height: 80px
+		display: flex
+		justify-content: space-between
+		align-items: center
+	.copyright_block
+		font-size: 16px
+		font-weight: 400
+		letter-spacing: 0.025em
+		color: #7a7a7a
+	.social
+		width: 200px
+		display: flex
+		justify-content: space-between
+		&_link
+			text-decoration: none
+			color: inherit
+			i
+				width: 32px
+				height: 32px
+				background: #ffffff
+				display: flex
+				flex-direction: row
+				justify-content: center
+				align-items: center
+				text-align: center
+				color: #7a7a7a
+				transition: $s_transition
+				&:hover
+					background-color: #f16d7f
+					color: #ffffff
+
+// CART
+
+.arrivals
+	background-color: #f8f3f4
+	&_container
+		min-height: 148px
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&_title
+		font-size: 24px
+		font-weight: 900
+		text-transform: uppercase
+		color: #f16d7f
+	&_crump
+		font-size: 14px
+		font-weight: 300
+		text-transform: uppercase
+		color: #636363
+		span
+			font-weight: 700
+			color: #f16d7f
+		a
+			text-decoration: none
+			color: #636363
+			transition: $s_transition
+			&:hover
+				color: #f16d7f
+
+.shopping
+	min-height: 776px
+	padding: 90px 0 69px 0
+	hr
+		margin-top: 20px
+		width: auto
+		height: 1px
+		background-color: #eaeaea
+		border: 1px solid #eaeaea
+	&_header
+		display: flex
+		justify-content: space-between
+		div
+			width: 80px
+			// text
+			text-align: center
+			font-size: 13px
+			font-weight: 700
+			text-transform: uppercase
+			letter-spacing: -0.015em
+			color: #222222
+			&:first-child
+				width: 460px
+				text-align: left
+	.products_content
+		margin-top: 20px
+		display: flex
+		justify-content: space-between
+		.products_specifications
+			width: 460px
+			display: flex
+			.products_img
+				margin-right: 18px
+			.details_column
+				display: flex
+				flex-direction: column
+				justify-content: space-between
+				.products_title
+					margin-top: 10px
+					font-size: 13px
+					font-weight: 400
+					text-transform: uppercase
+					color: #222222
+				.color_size
+					font-size: 13px
+					font-weight: 400
+					color: #575757
+					padding-bottom: 15px
+					span
+						font-weight: 300
+						color: #6f6e6e
+		.products_details
+			width: 80px
+			padding-top: 42px
+			text-align: center
+			font-size: 13px
+			font-weight: 400
+			color: #656565
+		.products_details-grid
+			display: grid
+			grid-template-columns: repeat(5, 1fr)
+			gap: 56px
+		.details_label
+			display: none
+		.quantity
+			width: 54px
+			height: 30px
+			background-color: #ffffff
+			border: 1px solid #eaeaea
+			text-align: center
+		i
+			font-size: 17px
+			color: #c0c0c0
+			transition: $s_transition
+			&:hover
+				color: #000000
+	.shopping_btn
+		margin-top: 44px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-wrap: wrap
+		button
+			padding: 20px 40px
+			background-color: #ffffff
+			border: 1px solid #eaeaea
+			transition: $s_transition
+			outline: none
+			// text
+			font-size: 14px
+			line-height: 1.2
+			font-weight: 700
+			text-transform: uppercase
+			color: #4a4a4a
+			&:hover
+				background-color: #f16d7f
+				color: #ffffff
+
+.shipping
+	&_container
+		display: flex
+		justify-content: space-between
+	&_address
+		width: 355px
+	&_title
+		font-size: 16px
+		font-weight: 700
+		text-transform: uppercase
+		color: #222222
+	&_form
+		margin-top: 23px
+		.country
+			+input_form
+		.quote
+			margin-top: 23px
+			padding: 12px 17px
+			background-color: #ffffff
+			border: 1px solid #eaeaea
+			transition: $s_transition
+			// text
+			font-size: 11px
+			font-weight: 700
+			text-transform: uppercase
+			color: #4a4a4a
+			&:hover
+				background-color: #f16d7f
+				color: #ffffff
+	&_discount
+		width: 355px
+		.coupon_title
+			font-size: 16px
+			font-weight: 700
+			text-transform: uppercase
+			color: #222222
+		label
+			margin-top: 23px
+			font-size: 14px
+			font-weight: 300
+			color: #000000
+		.country
+			+input_form
+		.apply
+			margin-top: 23px
+			padding: 12px 17px
+			background-color: #ffffff
+			border: 1px solid #eaeaea
+			transition: $s_transition
+			// text
+			font-size: 11px
+			font-weight: 700
+			text-transform: uppercase
+			color: #4a4a4a
+			&:hover
+				background-color: #f16d7f
+				color: #ffffff
+	&_result
+		width: 360px
+		padding: 43px
+		.sub_total
+			font-size: 11px
+			font-weight: 400
+			text-transform: uppercase
+			color: #4a4a4a
+			text-align: right
+			span
+				margin-left: 15px
+		.grand_total
+			margin-top: 14px
+			font-size: 16px
+			font-weight: 700
+			text-transform: uppercase
+			color: #222222
+			text-align: right
+			span
+				margin-left: 15px
+				color: #f16d7f
+		hr
+			margin-top: 14px
+			width: 100%
+			height: 1px
+			background-color: #e2e2e2
+			border: none
+		.proceed
+			margin-top: 8px
+			width: 100%
+			min-height: 50px
+			background-color: #f16d7f
+			border: none
+			// text
+			font-size: 16px
+			font-weight: 700
+			text-transform: uppercase
+			color: #ffffff
+			transition: $s_transition
+			outline: none
+			&:hover
+				opacity: 0.67
+				background-color: #e1e1e1
+				color: #222224
+
+// SINGLE
+
+// PRODUCT	
+
+.goods
+	margin-top: 59px
+	.goods_container
+		display: grid
+		grid-template-columns: 243px 847px
+		gap: 49px
+	.right_goods_block
+		.goods_specifications
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+	.productsMenuToggler
+		font-size: 14px
+		font-weight: 700
+		border-left: 5px solid #f16d7f
+		text-transform: uppercase
+		color: #f16d7f
+		border-bottom: 1px solid #ebebeb
+		cursor: pointer
+		background: url(../../assets/img//PRODUCT/caret-down-solid.svg) no-repeat right 5px center
+		background-size: 10px
+	.productsMenuToggler, .productsMenu a
+		line-height: 37px
+		padding-left: 22px
+		padding-right: 22px
+	.productsMenuUnits, .productsMenuUnits2, .productsMenuUnits3
+		a
+			color: #6f6e6e
+			display: block
+			font-size: 14px
+	.productsMenu:not(:first-child)
+		margin-top: 18px
+	.trending
+		width: 155px
+		&_title
+			font-size: 14px
+			font-weight: 700
+			text-transform: uppercase
+			color: #6f6e6e
+		&_items
+			margin-top: 18px
+			a
+				font-size: 14px
+				font-weight: 400
+				color: #6f6e6e
+				&:not(:nth-child(3n))
+					border-right: 1px solid #dfdfdf
+					padding-right: 5px
+	.size
+		width: 255px
+		&_title
+			margin-bottom: 18px
+		&_item
+			float: left
+			width: 63px
+	.my_form
+		width: 223px
+		div
+			display: flex
+			justify-content: space-between
+			span
+				margin-top: 17px
+				font-size: 14px
+				font-weight: 400
+				color: #6f6e6e
+		.my_label
+			@extend .trending_title
+		input
+			margin-top: 12px
+	.sort_products
+		margin-top: 20px
+		width: 100%
+		height: 50px
+		background-color: #f3f3f3
+		padding: 10px
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		flex-wrap: wrap
+		.sort
+			display: flex
+			margin-right: 10px
+			&_by
+				height: 30px
+				background-color: #ffffff
+				border: 1px solid #ebebeb
+				// text
+				font-size: 14px
+				font-weight: 400
+				color: #6f6e6e
+				outline: none
+			select
+				@extend .sort_by
+				border-left: none
+				padding-left: 5px
+				padding-right: 8px
+	.goods_items
+		display: grid
+		grid-template-columns: repeat(3, 262px)
+		gap: 30px
+		.items_mt
+			margin-top: 38px
+		.prewive_product
+			.add_icons
+				width: 50%
+				margin: 0 auto
+				margin-top: 2.5%
+				display: flex
+				justify-content: space-between
+				align-items: center
+			.stir
+				width: 57px
+				height: 38px
+				border: 1px solid #ffffff
+				border-radius: 3px
+				padding: 15px
+				display: flex
+				justify-content: center
+				align-items: center
+				div
+					display: flex
+					justify-content: center
+					align-items: center
+				img
+					width: 100%
+					height: inherit
+					display: flex
+					justify-content: center
+					align-items: center
+		.items_text
+			@extend %context_product
+	.goods_pagination
+		margin-top: 43px
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+	.num_pagination
+		min-width: 261px
+		height: 44px
+		padding: 17px 15px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		background-color: #ffffff
+		border: 1px solid #ebebeb
+		border-radius: 3px
+		i
+			font-size: 20px
+			color: #aaaaaa
+		a
+			font-size: 16px
+			font-weight: 300
+			color: #c4c4c4
+		span
+			color: #ef5b70
+	.view
+		min-width: 150px
+		height: 44px
+		background-color: #ffffff
+		border: 1px solid #ef5b70
+		border-radius: 3px
+		transition: $s_transition
+		outline: none
+		// text
+		font-size: 16px
+		font-weight: 300
+		color: #ef5b70
+		&:hover
+			background-color: #ef5b70
+			color: #ffffff
+
+.reasons
+	margin-top: 110px
+	width: 100%
+	background-color: #222224
+	&_container
+		min-height: 341px
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&_blocks
+		width: 308px
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+	&_img
+		height: 50px
+	&_title
+		font-size: 20px
+		font-weight: 700
+		letter-spacing: 0.025em
+		color: #fbfbfb
+	&_subtitle
+		font-size: 13px
+		line-height: 23px
+		font-weight: 300
+		letter-spacing: 0.025em
+		color: #fbfbfb
+
+// CECKOUT
+
+.dropdown
+	margin-top: 80px
+	&_list
+		padding-bottom: 30px
+		border-bottom: 1px solid #e8e8e8
+		&:not(:first-child)
+			margin-top: 30px
+	&_header
+		position: relative
+		outline: none
+		left: 0
+	&_title
+		color: #222222
+		font-size: 16px
+		font-weight: 700
+		text-transform: uppercase
+		position: absolute
+		left: -1px
+		top: 0
+		background: #ffffff
+		&:hover
+			color: $main_color
+	&_blocks
+		padding-top: 30px
+		display: flex
+		justify-content: space-between
+	&_registration
+		width: calc(50% - 15px)
+		padding-left: 35px
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		.register_title
+			font-size: 13px
+			font-weight: 400
+			text-transform: uppercase
+			color: #222222
+		.register_save
+			margin-top: 30px
+		.register_subtitle
+			margin-top: 10px
+			font-size: 13px
+			font-weight: 400
+			color: #b3b2b2
+		.register_form
+			margin-top: 34px
+			input[type="radio"]
+				margin-right: 14px
+				color: #212121
+			label
+				@extend .register_title
+				&:last-child
+					margin: 0
+	&_btn
+		margin-top: 30px
+		padding: 15px 50px
+		background-color: #ffffff
+		border: 1px solid #eaeaea
+		// text
+		font-size: 14px
+		font-weight: 700
+		text-transform: uppercase
+		color: #4a4a4a
+		transition: $s_transition
+		&:hover
+			background-color: $main_color
+			color: #ffffff
+	&_login
+		width: calc(50% - 15px)
+		.login_title
+			font-size: 13px
+			font-weight: 400
+			text-transform: uppercase
+			color: #222222
+		.login_subtitle
+			margin-top: 10px
+			font-size: 13px
+			font-weight: 400
+			color: #b3b2b2
+		.login_form
+			label
+				margin-top: 27px
+				font-size: 12px
+				font-weight: 400
+				color: #222222
+				span
+					color: #ff0d0d
+			input
+				padding: 0 15px
+				width: 390px
+				height: 45px
+				background-color: #ffffff
+				border: 1px solid #eaeaea
+		.hint
+			margin-top: 34px
+			font-size: 13px
+			font-weight: 400
+			color: #ff0d0d
+		.forgot
+			font-size: 14px
+			font-weight: 400
+			color: #222222
+			margin-left: 32px
